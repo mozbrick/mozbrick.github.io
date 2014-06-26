@@ -1,0 +1,10 @@
+{
+    "name": "Brick Wall",
+    "description": "Kitchen Sink of Brick Components",
+    "developer": {
+        "name": "mozilla",
+        "url": "http://github.com/mozilla/foundation"
+    },
+    "launch_path": "/sink.html",
+    "default_locale": "en"
+}
