@@ -1,0 +1,110 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <title>Brick</title>
+    <script src="/bower_components/platform/platform.js"></script>
+    <style>
+      html, body {
+        margin: 0;
+        height: 100%;
+        line-height: 1.4em;
+        font-family: sans-serif;
+      }
+      .main {
+        display: flex;
+        flex-direction: row;
+        height: 100%;
+      }
+      .main header {
+        background: #EAEFF2;
+        padding: 1em 0;
+        display: flex;
+        flex-direction: column;
+        overflow: auto;
+      }
+      .main header nav {
+        flex: 1;
+      }
+      nav ul {
+        padding: 0;
+      }
+      a {
+        display: block;
+        background: transparent;
+        padding: 0 1em;
+      }
+      a.active {
+        background: #D4DDE4;
+      }
+      .main nav li {
+        list-style-type: none;
+      }
+      .main article {
+        padding: 1em;
+        flex: 1;
+        overflow: auto;
+      }
+      article p {
+        max-width: 40em;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      table td, table th {
+        padding: .5em 1em;
+        border: 1px solid #ddd;
+        vertical-align: top;
+      }
+      table tr:nth-child(2n) {
+        background: #f8f8f8;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <header>
+        <h1>Brick</h1>
+        <nav>
+          <ul>
+            <li><a is="route-link" href="/about.html">About</a></li>
+            <li>FAQ</li>
+            <li>Download</li>
+          </ul>
+          <ul>
+            <li><a is="route-link" href="/docs/usage.html">Usage</a></li>
+            <li>Components
+              <ul>
+                <li>brick-calendar</li>
+                <li>brick-deck</li>
+                <li>brick-flipbox</li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <article>
+<h1 id="about">About</h1>
+      </article>
+    </div>
+    <script>
+      var RouteLinkProto = Object.create(HTMLAnchorElement.prototype);
+      RouteLinkProto.attachedCallback = function () {
+        var pathname = location.pathname;
+        var route = this.getAttribute('route');
+        if (!route) {
+          route = '^' + this.getAttribute('href');
+        }
+        route = new RegExp(route);
+        if (route.test(pathname)) {
+          this.classList.add('active');
+        }
+      };
+      document.registerElement('route-link', {
+        prototype: RouteLinkProto,
+        extends: 'a'
+      });
+    </script>
+  </body>
+</html>

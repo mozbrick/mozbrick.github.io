@@ -1,0 +1,22 @@
+      </article>
+    </div>
+    <script>
+      var RouteLinkProto = Object.create(HTMLAnchorElement.prototype);
+      RouteLinkProto.attachedCallback = function () {
+        var pathname = location.pathname;
+        var route = this.getAttribute('route');
+        if (!route) {
+          route = '^' + this.getAttribute('href');
+        }
+        route = new RegExp(route);
+        if (route.test(pathname)) {
+          this.classList.add('active');
+        }
+      };
+      document.registerElement('route-link', {
+        prototype: RouteLinkProto,
+        extends: 'a'
+      });
+    </script>
+  </body>
+</html>

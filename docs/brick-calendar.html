@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <title>Brick</title>
+    <script src="/bower_components/platform/platform.js"></script>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/media/css/site.css">
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <header>
+        <h1 class="logo"><img src="/media/img/logo.svg">Brick</h1>
+        <nav>
+          <ul>
+            <li><a is="route-link" href="/about.html">About</a></li>
+            <li><a is="route-link" href="/docs/faq.html">FAQ</a></li>
+            <li>
+              <a is="route-link" href="/download.html">
+                <i class="fa fa-download"></i>&nbsp; Download
+              </a>
+            </li>
+          </ul>
+          <ul>
+            <li><a is="route-link" href="/docs/usage.html">Usage</a></li>
+            <li><div>Components</div>
+              <ul>
+                <li><a is="route-link" href="/docs/brick-calendar.html">brick-calendar</a></li>
+                <li><a is="route-link" href="/docs/brick-deck.html">brick-deck</a></li>
+                <li><a is="route-link" href="/docs/brick-flipbox.html">brick-flipbox</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="https://twitter.com/mozbrick">
+                <i class="fa fa-twitter fa-fw"></i>&nbsp; Twitter
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/mozbrick/brick">
+                <i class="fa fa-github fa-fw"></i>&nbsp; GitHub
+              </a>
+            </li>
+        </nav>
+      </header>
+      <article>
+      </article>
+    </div>
+    <script>
+      var RouteLinkProto = Object.create(HTMLAnchorElement.prototype);
+      RouteLinkProto.attachedCallback = function () {
+        var pathname = location.pathname;
+        var route = this.getAttribute('route');
+        if (!route) {
+          route = '^' + this.getAttribute('href');
+        }
+        route = new RegExp(route);
+        if (route.test(pathname)) {
+          this.classList.add('active');
+        }
+      };
+      document.registerElement('route-link', {
+        prototype: RouteLinkProto,
+        extends: 'a'
+      });
+    </script>
+  </body>
+</html>
