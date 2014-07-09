@@ -1,0 +1,138 @@
+@import '../bower_components/brick-common/styles/mixins'
+@import '../bower_components/brick-common/styles/params'
+
+$slide-duration = 0.4s;
+
+brick-deck {
+
+  display: block;
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+
+  & > brick-card {
+    display: none;
+    position: absolute !important;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 0;
+    opacity: 1;
+    box-sizing(border-box);
+    transformStyle(preserve-3d);
+    transformed(translate(0%, 0%) scale(1));
+    &[selected], &[transition] {
+      display: block;
+    }
+  }
+
+  &[transition-type^="slide"] > brick-card,
+  & > brick-card[transition-type^="slide"] {
+    z-index: 1;
+  }
+
+  &[transition-type^="slide"] > brick-card[transition-direction="reverse"],
+  & > brick-card[transition-type^="slide"][transition-direction="reverse"] {
+    z-index: 2;
+  }
+
+  &[transition-type^=slide] > brick-card,
+  & > brick-card[transition-type^="slide"] {
+    -webkit-transition: -webkit-transform $slide-duration ease;
+    transition: transform $slide-duration ease;
+  }
+
+  // transition-type on the deck
+  &[transition-type="slide-right"] > brick-card  {
+    &[transition-direction="forward"],
+    &[transition-direction="reverse"][hide] {
+      transformed(translate(-100%, 0));
+    }
+    &[transition-direction="reverse"],
+    &[transition-direction="forward"][hide] {
+      transformed(translate(100%, 0));
+    }
+  }
+  &[transition-type="slide-left"] > brick-card {
+    &[transition-direction="forward"],
+    &[transition-direction="reverse"][hide] {
+      transformed(translate(100%, 0));
+    }
+    &[transition-direction="reverse"],
+    &[transition-direction="forward"][hide] {
+      transformed(translate(-100%, 0));
+    }
+  }
+  &[transition-type="slide-up"] > brick-card {
+    &[transition-direction="forward"],
+    &[transition-direction="reverse"][hide] {
+      transformed(translate(0, 100%));
+    }
+    &[transition-direction="reverse"],
+    &[transition-direction="forward"][hide] {
+      transformed(translate(0, -100%));
+    }
+  }
+  &[transition-type="slide-down"] > brick-card {
+    &[transition-direction="forward"],
+    &[transition-direction="reverse"][hide] {
+      transformed(translate(0, -100%));
+    }
+    &[transition-direction="reverse"],
+    &[transition-direction="forward"][hide] {
+      transformed(translate(0, 100%));
+    }
+  }
+  &[transition-type^="slide"] > brick-card[transition] {
+    transformed(translate(0, 0));
+  }
+
+  // transition-type on the card
+  & > brick-card {
+    &[transition-type="slide-right"] {
+      &[transition-direction="forward"],
+      &[transition-direction="reverse"][hide] {
+        transformed(translate(-100%, 0));
+      }
+      &[transition-direction="reverse"],
+      &[transition-direction="forward"][hide] {
+        transformed(translate(100%, 0));
+      }
+    }
+    &[transition-type="slide-left"] {
+      &[transition-direction="forward"],
+      &[transition-direction="reverse"][hide] {
+        transformed(translate(100%, 0));
+      }
+      &[transition-direction="reverse"],
+      &[transition-direction="forward"][hide] {
+        transformed(translate(-100%, 0));
+      }
+    }
+    &[transition-type="slide-up"] {
+      &[transition-direction="forward"],
+      &[transition-direction="reverse"][hide] {
+        transformed(translate(0, 100%));
+      }
+      &[transition-direction="reverse"],
+      &[transition-direction="forward"][hide] {
+        transformed(translate(0, -100%));
+      }
+    }
+    &[transition-type="slide-down"] {
+      &[transition-direction="forward"],
+      &[transition-direction="reverse"][hide] {
+        transformed(translate(0, -100%));
+      }
+      &[transition-direction="reverse"],
+      &[transition-direction="forward"][hide] {
+        transformed(translate(0, 100%));
+      }
+    }
+    &[transition-type^="slide"][transition] {
+      transformed(translate(0, 0));
+    }
+  }
+}

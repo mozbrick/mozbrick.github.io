@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <title>brick-layout</title>
+
+    <!-- Importing Polyfill -->
+    <script src="../bower_components/platform/platform.js"></script>
+
+    <!-- Importing Custom Elemenent -->
+    <link rel="import" href="../src/brick-layout.html">
+    <style>
+
+      html, body {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+      }
+      #layout {
+        height: 100%;
+      }
+      #header {
+        background-color: red;
+      }
+      #content {
+        background-color: grey;
+      }
+      #nav {
+        background-color: orange;
+      }
+
+
+    </style>
+  </head>
+  <body>
+
+    <brick-layout id="layout">
+
+      <header id="header">
+        header
+      </header>
+
+      <brick-layout id="content" horizontal-min-s flex>
+
+        <brick-layout id="nav">
+          <span>111111111</span>
+          <span>222222222</span>
+          <span>333333333</span>
+        </brick-layout>
+
+        <div id="content" flex>
+          article
+        </div>
+
+      </brick-layout>
+
+    </brick-layout>
+
+  </body>
+</html>

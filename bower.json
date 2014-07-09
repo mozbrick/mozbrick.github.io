@@ -15,6 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "platform": "Polymer/platform#~0.3.3"
+    "platform": "Polymer/platform#~0.3.3",
+    "brick": "mozbrick/brick#master"
   }
 }

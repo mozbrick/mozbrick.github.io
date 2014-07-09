@@ -4,10 +4,11 @@ html, body {
   line-height: 1.4em;
   font-family: 'Fira Sans', sans-serif;
 }
+
 .main {
+  height: 100%;
   display: flex;
   flex-direction: row;
-  height: 100%;
 }
 .main header {
   background: #EAEFF2;
@@ -18,15 +19,18 @@ html, body {
 .main header nav {
   flex: 1;
 }
+
 .logo {
   white-space: nowrap;
   margin: 2rem;
+  font-weight: 500;
 }
 .logo img {
   width: 48px;
   margin-right: .25em;
   vertical-align: middle;
 }
+
 nav ul {
   padding: 0;
 }
@@ -42,10 +46,14 @@ nav a, nav a:link {
 nav a.active {
   background: #D4DDE4;
 }
-.main nav li {
+nav ul ul a {
+  padding-left: 3rem;
+}
+nav li {
   list-style-type: none;
 }
-.main article {
+
+article {
   padding: 1em 2em;
   flex: 1;
   overflow: auto;

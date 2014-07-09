@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
     <title>Brick</title>
     <script src="/bower_components/platform/platform.js"></script>
+    <link rel="import" href="/bower_components/brick/dist/brick.html">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/bower_components/fira/fira.css">
     <link rel="stylesheet" href="/media/css/site.css">
     <style>
 
     </style>
   </head>
   <body>
-    <div class="main">
-      <header>
+    <brick-layout horizontal class="main">
+      <header drawer-max-s>
         <h1 class="logo"><img src="/media/img/logo.svg">Brick</h1>
         <nav>
           <ul>
@@ -48,7 +50,7 @@
             </li>
         </nav>
       </header>
-      <article>
+      <article flex>
       </article>
     </div>
     <script>

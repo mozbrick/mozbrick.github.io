@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <title>brick-layout</title>
+
+    <!-- Importing Polyfill -->
+    <script src="../bower_components/platform/platform.js"></script>
+
+    <!-- Importing Custom Elemenent -->
+    <link rel="import" href="../src/brick-layout.html">
+    <style>
+
+      html, body {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+      }
+      #layout {
+        height: 100%;
+      }
+      #header {
+        background-color: red;
+      }
+      #content {
+        background-color: grey;
+      }
+      #nav {
+        background-color: orange;
+      }
+      @media (min-width: 768px) {
+        #menu-button {
+          display: none;
+        }
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <brick-layout id="layout">
+
+      <header id="header">
+        <button id="menu-button">M</button> header
+      </header>
+
+      <brick-layout id="content" horizontal flex>
+
+        <brick-layout id="nav" drawer-max-s>
+          <span>111111111</span>
+          <span>222222222</span>
+          <span>333333333</span>
+        </brick-layout>
+
+        <div id="content" flex>
+          article
+        </div>
+
+      </brick-layout>
+
+    </brick-layout>
+
+    <script>
+      var drawerLayout = document.getElementById("content");
+      var menuButton = document.getElementById("menu-button");
+      menuButton.addEventListener("click", function(){
+        if (drawerLayout.hasAttribute("show")) {
+          drawerLayout.removeAttribute("show");
+        } else {
+          (drawerLayout.setAttribute("show",""));
+        }
+      });
+    </script>
+  </body>
+</html>
