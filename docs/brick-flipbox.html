@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <title>Brick</title>
+    <script src="/bower_components/platform/platform.js"></script>
+    <link rel="import" href="/bower_components/brick/dist/brick.html">
+    <link rel="stylesheet" href="//code.cdn.mozilla.net/fonts/fira.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/media/css/site.css">
+  </head>
+  <body>
+    <brick-layout horizontal class="main" id="main">
+      <header drawer-max-s>
+        <a class="logo" href="/index.html"><h1>Brick</h1></a>
+        <nav>
+<!--           <ul>
+            <li><a is="route-link" href="/about.html">About</a></li>
+            <li><a is="route-link" href="/blog/index.html">Blog</a></li>
+            <li><a is="route-link" href="/docs/faq.html">FAQ</a></li>
+            <li>
+              <a is="route-link" href="/download.html">
+                <i class="fa fa-download"></i>&nbsp; Download
+              </a>
+            </li>
+          </ul>
+ -->          <ul>
+            <!-- <li><a is="route-link" href="/docs/usage.html">Usage</a></li> -->
+            <li><div>Components</div>
+              <ul>
+                <li><a is="route-link" href="/docs/brick-action.html">brick-action</a></li>
+                <li><a is="route-link" href="/docs/brick-deck.html">brick-deck</a></li>
+                <li><a is="route-link" href="/docs/brick-flipbox.html">brick-flipbox</a></li>
+                <li><a is="route-link" href="/docs/brick-layout.html">brick-layout</a></li>
+                <li><a is="route-link" href="/docs/brick-tabbar.html">brick-tabbar</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="https://twitter.com/mozbrick">
+                <i class="fa fa-twitter fa-fw"></i>&nbsp; Twitter
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/mozbrick/brick">
+                <i class="fa fa-github fa-fw"></i>&nbsp; GitHub
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <article flex>
+        <brick-action trigger="click" target="main" action="toggleDrawer">
+          <button class="menu" hide-gt-s><i class="fa fa-bars"></i></button>
+        </brick-action>
+<h1 id="brick-flipbox">brick-flipbox</h1>
+<blockquote>
+<p>A <a href="https://github.com/mozilla/brick/">Brick</a> custom element.
+Flips between two content elements with a CSS Animation, similar to flipping a playing card.</p>
+</blockquote>
+<h2 id="demo">Demo</h2>
+<p><a href="http://mozbrick.github.io/brick-flipbox">Check it live!</a></p>
+<h2 id="usage">Usage</h2>
+<ol>
+<li><p>Import Web Components polyfill:</p>
+<pre><code class="lang-html"> &lt;script src=&quot;bower_components/platform/platform.js&quot;&gt;&lt;/script&gt;</code></pre>
+</li>
+<li><p>Import Custom Element:</p>
+<pre><code class="lang-html"> &lt;link rel=&quot;import&quot; href=&quot;src/element.html&quot;&gt;</code></pre>
+</li>
+<li><p>Start using it:</p>
+<pre><code class="lang-html"> &lt;brick-flipbox&gt;
+   &lt;div&gt;Front&lt;/div&gt;
+   &lt;div&gt;Back&lt;/div&gt;
+ &lt;/brick-flipbox&gt;</code></pre>
+</li>
+</ol>
+<h2 id="options">Options</h2>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Options</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>flipped</code></td>
+<td><em>boolean</em></td>
+<td><code>false</code></td>
+<td>True if the flipbox is flipped to the back.</td>
+</tr>
+<tr>
+<td><code>direction</code></td>
+<td><em>string</em></td>
+<td><code>right</code></td>
+<td>The flip direction. Can be <code>left</code>, <code>right</code>, <code>up</code> and <code>down</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="methods">Methods</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Returns</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>toggle()</code></td>
+<td>None.</td>
+<td>Nothing.</td>
+<td>Toggle the flipbox.</td>
+</tr>
+<tr>
+<td><code>showFront()</code></td>
+<td>None.</td>
+<td>Nothing.</td>
+<td>Show the front side.</td>
+</tr>
+<tr>
+<td><code>showBack()</code></td>
+<td>None.</td>
+<td>Nothing.</td>
+<td>Show the back side.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="events">Events</h2>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>flipend</code></td>
+<td>Triggers when the flipping is complete.</td>
+</tr>
+</tbody>
+</table>
+<p>triggering <code>reveal</code> on one of the elements inside the flipbox, will reveal the corresponding side.</p>
+<h2 id="development">Development</h2>
+<p>Brick components use <a href="http://learnboost.github.com/stylus/">Stylus</a> to generate their CSS.</p>
+<p>This repository comes outfitted with a set of tools to ease the development process.</p>
+<p>To get started:</p>
+<ul>
+<li><p>Install <a href="http://bower.io/">Bower</a> &amp; <a href="http://gulpjs.com/">Gulp</a>:</p>
+<pre><code class="lang-sh">  $ npm install -g bower gulp</code></pre>
+</li>
+<li><p>Install local dependencies:</p>
+<pre><code class="lang-sh">  $ npm install &amp;&amp; bower install</code></pre>
+</li>
+</ul>
+<p>While developing your component, there is a development server that will watch your files for changes and automatically re-build your styles and re-lint your code.</p>
+<p>To run the development server:</p>
+<ul>
+<li>Run <code>gulp server</code></li>
+<li>Navigate to <code>http:localhost:3001</code></li>
+</ul>
+<p>To simply build and lint your code, run <code>gulp build</code>.</p>
+<p>You can also push your code to GitHub Pages by running <code>gulp deploy</code>.</p>
+
+      </article>
+    </div>
+    <script>
+      var RouteLinkProto = Object.create(HTMLAnchorElement.prototype);
+      RouteLinkProto.attachedCallback = function () {
+        var pathname = location.pathname;
+        var route = this.getAttribute('route');
+        if (!route) {
+          route = '^' + this.getAttribute('href');
+        }
+        route = new RegExp(route);
+        if (route.test(pathname)) {
+          this.classList.add('active');
+        }
+      };
+      document.registerElement('route-link', {
+        prototype: RouteLinkProto,
+        extends: 'a'
+      });
+    </script>
+  </body>
+</html>

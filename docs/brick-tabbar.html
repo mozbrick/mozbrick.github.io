@@ -1,0 +1,258 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <title>Brick</title>
+    <script src="/bower_components/platform/platform.js"></script>
+    <link rel="import" href="/bower_components/brick/dist/brick.html">
+    <link rel="stylesheet" href="//code.cdn.mozilla.net/fonts/fira.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/media/css/site.css">
+  </head>
+  <body>
+    <brick-layout horizontal class="main" id="main">
+      <header drawer-max-s>
+        <a class="logo" href="/index.html"><h1>Brick</h1></a>
+        <nav>
+<!--           <ul>
+            <li><a is="route-link" href="/about.html">About</a></li>
+            <li><a is="route-link" href="/blog/index.html">Blog</a></li>
+            <li><a is="route-link" href="/docs/faq.html">FAQ</a></li>
+            <li>
+              <a is="route-link" href="/download.html">
+                <i class="fa fa-download"></i>&nbsp; Download
+              </a>
+            </li>
+          </ul>
+ -->          <ul>
+            <!-- <li><a is="route-link" href="/docs/usage.html">Usage</a></li> -->
+            <li><div>Components</div>
+              <ul>
+                <li><a is="route-link" href="/docs/brick-action.html">brick-action</a></li>
+                <li><a is="route-link" href="/docs/brick-deck.html">brick-deck</a></li>
+                <li><a is="route-link" href="/docs/brick-flipbox.html">brick-flipbox</a></li>
+                <li><a is="route-link" href="/docs/brick-layout.html">brick-layout</a></li>
+                <li><a is="route-link" href="/docs/brick-tabbar.html">brick-tabbar</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="https://twitter.com/mozbrick">
+                <i class="fa fa-twitter fa-fw"></i>&nbsp; Twitter
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/mozbrick/brick">
+                <i class="fa fa-github fa-fw"></i>&nbsp; GitHub
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <article flex>
+        <brick-action trigger="click" target="main" action="toggleDrawer">
+          <button class="menu" hide-gt-s><i class="fa fa-bars"></i></button>
+        </brick-action>
+<h1 id="brick-tabbar">brick-tabbar</h1>
+<blockquote>
+<p>A <a href="https://github.com/mozilla/brick/">Brick</a> tabbar component.</p>
+</blockquote>
+<h2 id="demo">Demo</h2>
+<p><a href="http://mozbrick.github.io/brick-tabbar">Check it live!</a></p>
+<h2 id="usage">Usage</h2>
+<ol>
+<li><p>Import Web Components polyfill:</p>
+<pre><code class="lang-html"> &lt;script src=&quot;bower_components/platform/platform.js&quot;&gt;&lt;/script&gt;</code></pre>
+</li>
+<li><p>Import Custom Element:</p>
+<pre><code class="lang-html"> &lt;link rel=&quot;import&quot; href=&quot;src/element.html&quot;&gt;</code></pre>
+</li>
+<li><p>Start using it:</p>
+<pre><code class="lang-html"> &lt;brick-tabbar&gt;&lt;/brick-tabbar&gt;</code></pre>
+</li>
+</ol>
+<h2 id="brick-tabbar-details">brick-tabbar details</h2>
+<h3 id="attributes">Attributes</h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Options</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>target-event</code></td>
+<td><em>string</em></td>
+<td><code>reveal</code></td>
+<td>The event that a tab fires on its target element when the tab is clicked.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="accessors">Accessors</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>target-event</code></td>
+<td><em>string</em></td>
+<td><code>reveal</code></td>
+<td>Corresponds to the <code>target-event</code> attribute.</td>
+</tr>
+<tr>
+<td><code>tabs</code> (getter only)</td>
+<td><em>array</em></td>
+<td>-</td>
+<td>Returns a list of the <code>&lt;brick-tabbar-tab&gt;</code> elements in the <code>&lt;brick-tabbar&gt;</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="brick-tabbar-tab-details">brick-tabbar-tab details</h2>
+<h3 id="attributes">Attributes</h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Options</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>target-event</code></td>
+<td><em>string</em></td>
+<td>-</td>
+<td>The event that a tab fires on its target element when the tab is clicked. If not specified a tab takes the event specified on the parent brick-tabbar.</td>
+</tr>
+<tr>
+<td><code>target</code></td>
+<td><em>string</em></td>
+<td>-</td>
+<td>The id of the target element of this particular tab.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="accessors">Accessors</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>target-event</code></td>
+<td><em>string</em></td>
+<td><code>reveal</code></td>
+<td>Corresponds to the <code>target-event</code> attribute.</td>
+</tr>
+<tr>
+<td><code>target</code></td>
+<td><em>string</em></td>
+<td>-</td>
+<td>Corresponds to the <code>target</code> attrubute.</td>
+</tr>
+<tr>
+<td><code>targetElement</code></td>
+<td><em>node</em></td>
+<td></td>
+<td>getter: Returns the element targeted by the specific tab. setter: Assigns the tab&#39;s targeted element. (If target is assigned using this dynamic assignment, the target-selector attribute is removed.)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="methods">Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Returns</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>select()</code></td>
+<td>-</td>
+<td>-</td>
+<td>Select the tab.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>reveal</code></td>
+<td>Whenever a brick-tabbar-tab is clicked, and <code>target-event</code> is not otherwise specified, a <code>reveal</code> event is fired on each of its target elements. It is up to the target element to respond to this event. Some Brick Elements have default responses to the <code>reveal</code>.</td>
+</tr>
+<tr>
+<td><code>select</code></td>
+<td>The select event is fired when the tab is explicitly selected, using its <code>select</code> method.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="development">Development</h2>
+<p>Brick components use <a href="http://learnboost.github.com/stylus/">Stylus</a> to generate their CSS.</p>
+<p>This repository comes outfitted with a set of tools to ease the development process.</p>
+<p>To get started:</p>
+<ul>
+<li><p>Install <a href="http://bower.io/">Bower</a> &amp; <a href="http://gulpjs.com/">Gulp</a>:</p>
+<pre><code class="lang-sh">  $ npm install -g bower gulp</code></pre>
+</li>
+<li><p>Install local dependencies:</p>
+<pre><code class="lang-sh">  $ npm install &amp;&amp; bower install</code></pre>
+</li>
+</ul>
+<p>While developing your component, there is a development server that will watch your files for changes and automatically re-build your styles and re-lint your code.</p>
+<p>To run the development server:</p>
+<ul>
+<li>Run <code>gulp server</code></li>
+<li>Navigate to <code>http:localhost:3001</code></li>
+</ul>
+<p>To simply build and lint your code, run <code>gulp build</code>.</p>
+<p>You can also push your code to GitHub Pages by running <code>gulp deploy</code>.</p>
+
+      </article>
+    </div>
+    <script>
+      var RouteLinkProto = Object.create(HTMLAnchorElement.prototype);
+      RouteLinkProto.attachedCallback = function () {
+        var pathname = location.pathname;
+        var route = this.getAttribute('route');
+        if (!route) {
+          route = '^' + this.getAttribute('href');
+        }
+        route = new RegExp(route);
+        if (route.test(pathname)) {
+          this.classList.add('active');
+        }
+      };
+      document.registerElement('route-link', {
+        prototype: RouteLinkProto,
+        extends: 'a'
+      });
+    </script>
+  </body>
+</html>

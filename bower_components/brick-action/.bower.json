@@ -1,0 +1,37 @@
+{
+  "name": "brick-action",
+  "homepage": "https://github.com/mozbrick/brick-action",
+  "authors": [
+    "mozilla"
+  ],
+  "description": "A component for wiring up events and methods.",
+  "main": "src/brick-action.html",
+  "keywords": [
+    "brick",
+    "webcomponents"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "brick-common": "*",
+    "platform": "Polymer/platform"
+  },
+  "devDependencies": {
+    "brick-flipbox": "mozbrick/brick-flipbox"
+  },
+  "_release": "de9603bde5",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "de9603bde57a0803547feb206ff9a12713665f99"
+  },
+  "_source": "git://github.com/mozbrick/brick-action.git",
+  "_target": "*",
+  "_originalSource": "mozbrick/brick-action"
+}

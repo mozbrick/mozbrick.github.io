@@ -1,0 +1,134 @@
+@import '../bower_components/brick-common/styles/mixins'
+@import '../bower_components/brick-common/styles/params'
+
+$xs = {                end:  768px, name: xs }
+$s  = { start:  768px, end:  992px, name: s  }
+$m  = { start:  992px, end: 1200px, name: m  }
+$l  = { start: 1200px,              name: l  }
+
+/**
+ * example:
+ *  & > [horizontal-lt-s/m/l] { mixin() }
+ *  & > [horizontal-gt-xs/s/m] { mixin() }
+ *  & > [horizontal-xs/s/m/l] { mixin() }
+ *  & > [horizontal] { mixin() }
+ * would be created by:
+ * responsify("& > ", horizontal, mixin)
+ */
+responsify(selector, attr, content) {
+  // attr-lt-[s,m,l]
+  for $range in $s $m $l {
+    {selector}[{attr}-lt-{$range.name}] {
+      @media (max-width: $range.start) {
+        content();
+      }
+    }
+  }
+  // attr-gt-[xs,s,m]
+  for $range in $xs $s $m {
+    {selector}[{attr}-gt-{$range.name}] {
+      @media (min-width: $range.end) {
+        content();
+      }
+    }
+  }
+  // attr-[xs,s,m,l]
+  for $range in $s $m {
+    {selector}[{attr}-{$range.name}] {
+      @media (max-width: $range.start) and (min-width: $range.end) {
+        content();
+      }
+    }
+  }
+  // attr
+  {selector}[{attr}] {
+    content();
+  }
+}
+
+brick-layout {
+
+  display: flex;
+  overflow: hidden;
+  box-sizing: border-box;
+  box-orient: vertical;
+  flex-direction: column;
+  position: relative;
+
+  /**
+   * Horizontal Layout
+   *--------------------------------------------------*/
+  _horizontal() {
+    box-orient: horizontal;
+    flex-direction: row;
+  }
+  responsify("&", horizontal, _horizontal);
+
+  /**
+   *  Flex-children
+   *--------------------------------------------------*/
+  _flex() {
+    flex: 1;
+    overflow: auto;
+  }
+  responsify("& > ", flex, _flex);
+
+  /**
+   *  hide
+   *--------------------------------------------------*/
+  _hide() {
+    display: none;
+  }
+  responsify("& ", hide, _hide);
+
+
+  /**
+   *  Drawer
+   *--------------------------------------------------*/
+  _drawer() {
+    height: 100%;
+    position: absolute;
+    transform: translate(-100%,0);
+    transition: transform .2s ease;
+  }
+  responsify("& > ", drawer, _drawer)
+  //show state
+  &[open] {
+    & > [drawer],
+    & > [drawer-lt-{$s.name}],
+    & > [drawer-lt-{$m.name}],
+    & > [drawer-lt-{$l.name}],
+    & > [drawer-gt-{$xs.name}],
+    & > [drawer-gt-{$s.name}],
+    & > [drawer-gt-{$m.name}],
+    & > [drawer-{$xs.name}],
+    & > [drawer-{$s.name}],
+    & > [drawer-{$m.name}],
+    & > [drawer-{$l.name}] {
+      transform: translate(0,0);
+    }
+  }
+
+  _drawertop() {
+    position: absolute;
+    transform: translate(0,-100%);
+    transition: transform .2s ease;
+    width: 100%;
+  }
+  responsify("& > ", drawer-top, _drawertop)
+  &[open] {
+    & > [drawer-top],
+    & > [drawer-top-lt-{$s.name}],
+    & > [drawer-top-lt-{$m.name}],
+    & > [drawer-top-lt-{$l.name}],
+    & > [drawer-top-gt-{$xs.name}],
+    & > [drawer-top-gt-{$s.name}],
+    & > [drawer-top-gt-{$m.name}],
+    & > [drawer-top-{$xs.name}],
+    & > [drawer-top-{$s.name}],
+    & > [drawer-top-{$m.name}],
+    & > [drawer-top-{$l.name}] {
+      transform: translate(0,0);
+    }
+  }
+}

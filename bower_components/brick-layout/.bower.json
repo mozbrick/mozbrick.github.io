@@ -1,0 +1,37 @@
+{
+  "name": "brick-layout",
+  "homepage": "https://github.com/mozbrick/brick-layout",
+  "authors": [
+    "mozilla"
+  ],
+  "description": "A simple layout component",
+  "main": "src/brick-layout.html",
+  "keywords": [
+    "brick",
+    "webcomponents"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "brick-common": "*",
+    "platform": "Polymer/platform"
+  },
+  "devDependencies": {
+    "brick-action": "mozbrick/brick-action"
+  },
+  "_release": "e181cabc54",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "e181cabc54f7e978355797e40efa9f0a67cd0271"
+  },
+  "_source": "git://github.com/mozbrick/brick-layout.git",
+  "_target": "*",
+  "_originalSource": "mozbrick/brick-layout"
+}

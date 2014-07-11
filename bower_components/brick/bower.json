@@ -1,0 +1,30 @@
+{
+  "name": "brick",
+  "version": "2.0.0-alpha",
+  "homepage": "http://mozilla.github.io/brick",
+  "authors": [
+    "Matt Claypotch <thepotch@gmail.com>"
+  ],
+  "description": "Web Components for Modern Webapps",
+  "main": "dist/brick.html",
+  "keywords": [
+    "webcomponents",
+    "mozilla"
+  ],
+  "license": "Apache License v2",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "brick-action": "mozbrick/brick-action",
+    "brick-deck": "mozbrick/brick-deck",
+    "brick-flipbox": "mozbrick/brick-flipbox",
+    "brick-layout": "mozbrick/brick-layout",
+    "brick-tabbar": "mozbrick/brick-tabbar",
+    "es6-promise": "components/es6-promise#~1.0.0"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "name": "brick-tabbar",
+  "homepage": "https://github.com/mozbrick/brick-tabbar",
+  "authors": [
+    "mozilla"
+  ],
+  "description": "A tabbar component.",
+  "main": "src/brick-tabbar.html",
+  "keywords": [
+    "brick",
+    "webcomponents"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "brick-common": "*",
+    "platform": "Polymer/platform"
+  },
+  "devDependencies": {
+    "brick-deck": "mozbrick/brick-deck"
+  },
+  "_release": "8eff46a031",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "8eff46a03133908b776a4464fb25f23c1e22f711"
+  },
+  "_source": "git://github.com/mozbrick/brick-tabbar.git",
+  "_target": "*",
+  "_originalSource": "mozbrick/brick-tabbar"
+}

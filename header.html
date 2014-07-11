@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <title>Brick</title>
+    <script src="/bower_components/platform/platform.js"></script>
+    <link rel="import" href="/bower_components/brick/dist/brick.html">
+    <link rel="stylesheet" href="//code.cdn.mozilla.net/fonts/fira.css">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/media/css/site.css">
+  </head>
+  <body>
+    <brick-layout horizontal class="main" id="main">
+      <header drawer-max-s>
+        <a class="logo" href="/index.html"><h1>Brick</h1></a>
+        <nav>
+<!--           <ul>
+            <li><a is="route-link" href="/about.html">About</a></li>
+            <li><a is="route-link" href="/blog/index.html">Blog</a></li>
+            <li><a is="route-link" href="/docs/faq.html">FAQ</a></li>
+            <li>
+              <a is="route-link" href="/download.html">
+                <i class="fa fa-download"></i>&nbsp; Download
+              </a>
+            </li>
+          </ul>
+ -->          <ul>
+            <!-- <li><a is="route-link" href="/docs/usage.html">Usage</a></li> -->
+            <li><div>Components</div>
+              <ul>
+                <li><a is="route-link" href="/docs/brick-action.html">brick-action</a></li>
+                <li><a is="route-link" href="/docs/brick-deck.html">brick-deck</a></li>
+                <li><a is="route-link" href="/docs/brick-flipbox.html">brick-flipbox</a></li>
+                <li><a is="route-link" href="/docs/brick-layout.html">brick-layout</a></li>
+                <li><a is="route-link" href="/docs/brick-tabbar.html">brick-tabbar</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul>
+            <li>
+              <a href="https://twitter.com/mozbrick">
+                <i class="fa fa-twitter fa-fw"></i>&nbsp; Twitter
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/mozbrick/brick">
+                <i class="fa fa-github fa-fw"></i>&nbsp; GitHub
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+      <article flex>
+        <brick-action trigger="click" target="main" action="toggleDrawer">
+          <button class="menu" hide-gt-s><i class="fa fa-bars"></i></button>
+        </brick-action>

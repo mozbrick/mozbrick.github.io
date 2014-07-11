@@ -1,35 +1,21 @@
 {
-  "name": "brick",
-  "description": "UI Web Components for Mobile Web Apps",
-  "version": "1.0.1",
-  "keywords": [
-    "brick",
-    "custom",
-    "elements",
-    "x-tag"
+  "name": "mozbrick.github.io",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mozbrick/mozbrick.github.io",
+  "authors": [
+    "Matt Claypotch <thepotch@gmail.com>"
   ],
-  "main": [
-    "dist/brick.js",
-    "dist/brick.css",
-    "dist/OpenSans-SemiBold.ttf"
-  ],
+  "license": "MIT",
+  "private": true,
   "ignore": [
-    "site",
-    "demos",
-    "component",
-    "build",
-    "bower_components"
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
   ],
   "dependencies": {
-    "x-tag-core": "0.9.4",
-    "x-tag-appbar": "0.2.12",
-    "x-tag-flipbox": "0.2.7",
-    "x-tag-toggle": "0.2.9",
-    "x-tag-calendar": "0.1.6",
-    "x-tag-deck": "0.2.4",
-    "x-tag-layout": "0.1.7",
-    "x-tag-slider": "0.1.7",
-    "x-tag-tabbar": "0.1.8",
-    "brick-common": "0.1.2"
+    "platform": "Polymer/platform#~0.3.3",
+    "brick": "mozbrick/brick#master"
   }
 }
