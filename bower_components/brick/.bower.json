@@ -19,17 +19,18 @@
     "tests"
   ],
   "dependencies": {
-    "brick-layout": "mozbrick/brick-layout",
-    "brick-flipbox": "mozbrick/brick-flipbox",
-    "brick-tabbar": "mozbrick/brick-tabbar",
+    "brick-action": "mozbrick/brick-action",
     "brick-deck": "mozbrick/brick-deck",
+    "brick-flipbox": "mozbrick/brick-flipbox",
+    "brick-layout": "mozbrick/brick-layout",
+    "brick-tabbar": "mozbrick/brick-tabbar",
     "es6-promise": "components/es6-promise#~1.0.0"
   },
-  "_release": "fe2ceec5d6",
+  "_release": "8f6edf8748",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "fe2ceec5d649815f8482f699dcd7b735d14853c3"
+    "commit": "8f6edf874870234228d4cd9c03e6bd6e0f81b9e2"
   },
   "_source": "git://github.com/mozbrick/brick.git",
   "_target": "master",

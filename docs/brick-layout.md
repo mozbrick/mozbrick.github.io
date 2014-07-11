@@ -46,7 +46,7 @@ Attribites declared with `attr-gt-[xs/s/m]` are active above the specified page 
 Attribites declared with `attr-[xs/s/m]` are active at the specified page width.
 
 Attributes on descendent elements | Options     | Default      | Description
-`hide`                            | *boolean*   | -            | Set display: none for this element. 
+`hide`                            | *boolean*   | -            | Set display: none for this element.
 
 Hide can also be used with the `attr-lt-[s/m/l]`, `attr-gt-[xs/s/m]` and `attr-[xs/s/m/l]` pattern.
 

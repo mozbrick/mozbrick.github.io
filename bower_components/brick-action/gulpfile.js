@@ -6,11 +6,10 @@ var ghpages = require('gulp-gh-pages');
 var gulp = require('gulp');
 var helptext = require('gulp-helptext');
 var jshint = require('gulp-jshint');
-var karma = require('gulp-karma');
 var stylus = require('gulp-stylus');
 
 var paths = {
-  'main': 'src/brick-layout.html',
+  'main': 'src/brick-action.html',
   'scripts': 'src/*.js',
   'stylesheets': 'src/*.styl',
   'src': 'src/*',
@@ -27,8 +26,8 @@ gulp.task('lint', function() {
 
 gulp.task('styles', function() {
   gulp.src(paths.stylesheets)
-    .pipe(stylus({errors: true}))
-    .pipe(concat('brick-layout.css'))
+    .pipe(stylus())
+    .pipe(concat('brick-action.css'))
     .pipe(gulp.dest('src'));
 });
 
@@ -51,21 +50,8 @@ gulp.task('watch', function () {
 // do a build, start a server, watch for changes
 gulp.task('server', ['build','connect','watch']);
 
-// run the tests
-gulp.task('test', function() {
-  return gulp.src(paths.testfiles)
-    .pipe(karma({
-      configFile: 'karma.conf.js',
-      action: 'run'
-    }))
-    .on('error', function(err) {
-      throw err;
-    });
-});
-
 // Bump up the Version (patch)
 gulp.task('bump', function(){
-  console.log(arguments);
   gulp.src(['bower.json','package.json'])
   .pipe(bump())
   .pipe(gulp.dest('./'));

@@ -55,13 +55,12 @@
         <brick-action trigger="click" target="main" action="toggleDrawer">
           <button class="menu" hide-gt-s><i class="fa fa-bars"></i></button>
         </brick-action>
-<h1 id="brick-flipbox">brick-flipbox</h1>
+<h1 id="brick-tabbar">brick-tabbar</h1>
 <blockquote>
-<p>A <a href="https://github.com/mozilla/brick/">Brick</a> custom element.
-Flips between two content elements with a CSS Animation, similar to flipping a playing card.</p>
+<p>A <a href="https://github.com/mozilla/brick/">Brick</a> tabbar component.</p>
 </blockquote>
 <h2 id="demo">Demo</h2>
-<p><a href="http://mozbrick.github.io/brick-flipbox">Check it live!</a></p>
+<p><a href="http://mozbrick.github.io/brick-tabbar">Check it live!</a></p>
 <h2 id="usage">Usage</h2>
 <ol>
 <li><p>Import Web Components polyfill:</p>
@@ -71,13 +70,11 @@ Flips between two content elements with a CSS Animation, similar to flipping a p
 <pre><code class="lang-html"> &lt;link rel=&quot;import&quot; href=&quot;src/element.html&quot;&gt;</code></pre>
 </li>
 <li><p>Start using it:</p>
-<pre><code class="lang-html"> &lt;brick-flipbox&gt;
-   &lt;div&gt;Front&lt;/div&gt;
-   &lt;div&gt;Back&lt;/div&gt;
- &lt;/brick-flipbox&gt;</code></pre>
+<pre><code class="lang-html"> &lt;brick-tabbar&gt;&lt;/brick-tabbar&gt;</code></pre>
 </li>
 </ol>
-<h2 id="options">Options</h2>
+<h2 id="brick-tabbar-details">brick-tabbar details</h2>
+<h3 id="attributes">Attributes</h3>
 <table>
 <thead>
 <tr>
@@ -89,20 +86,96 @@ Flips between two content elements with a CSS Animation, similar to flipping a p
 </thead>
 <tbody>
 <tr>
-<td><code>flipped</code></td>
-<td><em>boolean</em></td>
-<td><code>false</code></td>
-<td>True if the flipbox is flipped to the back.</td>
-</tr>
-<tr>
-<td><code>direction</code></td>
+<td><code>target-event</code></td>
 <td><em>string</em></td>
-<td><code>right</code></td>
-<td>The flip direction. Can be <code>left</code>, <code>right</code>, <code>up</code> and <code>down</code>.</td>
+<td><code>reveal</code></td>
+<td>The event that a tab fires on its target element when the tab is clicked.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="methods">Methods</h2>
+<h3 id="accessors">Accessors</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>target-event</code></td>
+<td><em>string</em></td>
+<td><code>reveal</code></td>
+<td>Corresponds to the <code>target-event</code> attribute.</td>
+</tr>
+<tr>
+<td><code>tabs</code> (getter only)</td>
+<td><em>array</em></td>
+<td>-</td>
+<td>Returns a list of the <code>&lt;brick-tabbar-tab&gt;</code> elements in the <code>&lt;brick-tabbar&gt;</code>.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="brick-tabbar-tab-details">brick-tabbar-tab details</h2>
+<h3 id="attributes">Attributes</h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Options</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>target-event</code></td>
+<td><em>string</em></td>
+<td>-</td>
+<td>The event that a tab fires on its target element when the tab is clicked. If not specified a tab takes the event specified on the parent brick-tabbar.</td>
+</tr>
+<tr>
+<td><code>target</code></td>
+<td><em>string</em></td>
+<td>-</td>
+<td>The id of the target element of this particular tab.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="accessors">Accessors</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>target-event</code></td>
+<td><em>string</em></td>
+<td><code>reveal</code></td>
+<td>Corresponds to the <code>target-event</code> attribute.</td>
+</tr>
+<tr>
+<td><code>target</code></td>
+<td><em>string</em></td>
+<td>-</td>
+<td>Corresponds to the <code>target</code> attrubute.</td>
+</tr>
+<tr>
+<td><code>targetElement</code></td>
+<td><em>node</em></td>
+<td></td>
+<td>getter: Returns the element targeted by the specific tab. setter: Assigns the tab&#39;s targeted element. (If target is assigned using this dynamic assignment, the target-selector attribute is removed.)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="methods">Methods</h3>
 <table>
 <thead>
 <tr>
@@ -114,26 +187,14 @@ Flips between two content elements with a CSS Animation, similar to flipping a p
 </thead>
 <tbody>
 <tr>
-<td><code>toggle()</code></td>
-<td>None.</td>
-<td>Nothing.</td>
-<td>Toggle the flipbox.</td>
-</tr>
-<tr>
-<td><code>showFront()</code></td>
-<td>None.</td>
-<td>Nothing.</td>
-<td>Show the front side.</td>
-</tr>
-<tr>
-<td><code>showBack()</code></td>
-<td>None.</td>
-<td>Nothing.</td>
-<td>Show the back side.</td>
+<td><code>select()</code></td>
+<td>-</td>
+<td>-</td>
+<td>Select the tab.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="events">Events</h2>
+<h3 id="events">Events</h3>
 <table>
 <thead>
 <tr>
@@ -143,12 +204,15 @@ Flips between two content elements with a CSS Animation, similar to flipping a p
 </thead>
 <tbody>
 <tr>
-<td><code>flipend</code></td>
-<td>Triggers when the flipping is complete.</td>
+<td><code>reveal</code></td>
+<td>Whenever a brick-tabbar-tab is clicked, and <code>target-event</code> is not otherwise specified, a <code>reveal</code> event is fired on each of its target elements. It is up to the target element to respond to this event. Some Brick Elements have default responses to the <code>reveal</code>.</td>
+</tr>
+<tr>
+<td><code>select</code></td>
+<td>The select event is fired when the tab is explicitly selected, using its <code>select</code> method.</td>
 </tr>
 </tbody>
 </table>
-<p>triggering <code>reveal</code> on one of the elements inside the flipbox, will reveal the corresponding side.</p>
 <h2 id="development">Development</h2>
 <p>Brick components use <a href="http://learnboost.github.com/stylus/">Stylus</a> to generate their CSS.</p>
 <p>This repository comes outfitted with a set of tools to ease the development process.</p>

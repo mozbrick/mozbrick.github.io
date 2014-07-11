@@ -10,6 +10,10 @@
 
     <!-- Importing Custom Elemenent -->
     <link rel="import" href="../src/brick-layout.html">
+
+    <!-- Importing Brick Action for this Demo -->
+    <link rel="import" href="../bower_components/brick-action/src/brick-action.html">
+
     <style>
 
       html, body {
@@ -23,7 +27,7 @@
       #header {
         background-color: red;
       }
-      #content {
+      #article {
         background-color: grey;
       }
       #nav {
@@ -47,13 +51,13 @@
 
       <brick-layout id="content" horizontal flex>
 
-        <brick-layout id="nav" drawer-max-s>
+        <brick-layout id="nav" drawer-lt-s>
           <span>111111111</span>
           <span>222222222</span>
           <span>333333333</span>
         </brick-layout>
 
-        <div id="content" flex>
+        <div id="article" flex>
           article
         </div>
 
@@ -61,16 +65,7 @@
 
     </brick-layout>
 
-    <script>
-      var drawerLayout = document.getElementById("content");
-      var menuButton = document.getElementById("menu-button");
-      menuButton.addEventListener("click", function(){
-        if (drawerLayout.hasAttribute("show")) {
-          drawerLayout.removeAttribute("show");
-        } else {
-          (drawerLayout.setAttribute("show",""));
-        }
-      });
-    </script>
+    <brick-action source="menu-button" target="content" action="toggleDrawer"></brick-action>
+
   </body>
 </html>

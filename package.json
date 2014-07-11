@@ -13,6 +13,8 @@
     "gulp-marked": "^0.2.0",
     "gulp": "^3.8.5",
     "gulp-footer": "^1.0.4",
-    "gulp-header": "^1.0.2"
+    "gulp-header": "^1.0.2",
+    "gulp-concat": "^2.3.3",
+    "sort-stream": "^1.0.0"
   }
 }

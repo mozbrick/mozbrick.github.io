@@ -1,7 +1,5 @@
 # Brick
 
-[![Build Status](https://travis-ci.org/mozbrick/brick.png)](https://travis-ci.org/mozbrick/brick)
-
 Brick is a collection of UI components designed for the easy and quick building of web application UIs. Brick components are built using the Web Components standard to allow developers to describe the UI of their app using the HTML syntax they already know.
 
 ## Install
@@ -49,15 +47,4 @@ bower install
 gulp build
 ```
 
-## Components
-
-Here is a list of the components currently in the primary distribution of Brick:
-
-* [brick-action](https://github.com/mozbrick/brick-action)
-* [brick-deck](https://github.com/mozbrick/brick-deck)
-* [brick-flipbox](https://github.com/mozbrick/brick-flipbox)
-* [brick-layout](https://github.com/mozbrick/brick-layout)
-* [brick-tabbar](https://github.com/mozbrick/brick-tabbar)
-
-If you encounter issues with a component, please file issues against the individual component repositories.
 

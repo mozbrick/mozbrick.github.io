@@ -55,13 +55,12 @@
         <brick-action trigger="click" target="main" action="toggleDrawer">
           <button class="menu" hide-gt-s><i class="fa fa-bars"></i></button>
         </brick-action>
-<h1 id="brick-flipbox">brick-flipbox</h1>
+<h1 id="brick-layout">brick-layout</h1>
 <blockquote>
-<p>A <a href="https://github.com/mozilla/brick/">Brick</a> custom element.
-Flips between two content elements with a CSS Animation, similar to flipping a playing card.</p>
+<p>A <a href="https://github.com/mozbrick/brick/">Brick</a> layout component.</p>
 </blockquote>
 <h2 id="demo">Demo</h2>
-<p><a href="http://mozbrick.github.io/brick-flipbox">Check it live!</a></p>
+<p><a href="http://mozbrick.github.io/brick-layout">Check it live!</a></p>
 <h2 id="usage">Usage</h2>
 <ol>
 <li><p>Import Web Components polyfill:</p>
@@ -71,10 +70,7 @@ Flips between two content elements with a CSS Animation, similar to flipping a p
 <pre><code class="lang-html"> &lt;link rel=&quot;import&quot; href=&quot;src/element.html&quot;&gt;</code></pre>
 </li>
 <li><p>Start using it:</p>
-<pre><code class="lang-html"> &lt;brick-flipbox&gt;
-   &lt;div&gt;Front&lt;/div&gt;
-   &lt;div&gt;Back&lt;/div&gt;
- &lt;/brick-flipbox&gt;</code></pre>
+<pre><code class="lang-html"> &lt;brick-layout&gt;&lt;/brick-layout&gt;</code></pre>
 </li>
 </ol>
 <h2 id="options">Options</h2>
@@ -89,19 +85,62 @@ Flips between two content elements with a CSS Animation, similar to flipping a p
 </thead>
 <tbody>
 <tr>
-<td><code>flipped</code></td>
+<td><code>horizontal</code></td>
 <td><em>boolean</em></td>
-<td><code>false</code></td>
-<td>True if the flipbox is flipped to the back.</td>
+<td>-</td>
+<td>Use a horizontal instead of the default vertical layout.</td>
 </tr>
 <tr>
-<td><code>direction</code></td>
-<td><em>string</em></td>
-<td><code>right</code></td>
-<td>The flip direction. Can be <code>left</code>, <code>right</code>, <code>up</code> and <code>down</code>.</td>
+<td><code>horizontal-min-[s/m/l]</code></td>
+<td><em>boolean</em></td>
+<td>-</td>
+<td>Use a horizontal instead of the default vertical layout starting at a page width of 768/992/1200px.</td>
+</tr>
+<tr>
+<td><code>open</code></td>
+<td><em>boolean</em></td>
+<td>-</td>
+<td>Open child drawer elements.</td>
 </tr>
 </tbody>
 </table>
+<table>
+<thead>
+<tr>
+<th>Attributes on direct child-elements</th>
+<th>Options</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>flex</code></td>
+<td><em>boolean</em></td>
+<td>-</td>
+<td>Set flex:1 for this element.</td>
+</tr>
+<tr>
+<td><code>drawer</code></td>
+<td><em>boolean</em></td>
+<td>-</td>
+<td>use this element as a drawer. drawer can he hidden and shown by setting the <code>show</code> attribute.</td>
+</tr>
+<tr>
+<td><code>drawer-top</code></td>
+<td><em>boolean</em></td>
+<td>-</td>
+<td>use this element as a drawer sliding in from the top. drawer can he hidden and shown by setting the <code>show</code> attribute.</td>
+</tr>
+</tbody>
+</table>
+<p>All those attributes can also be set as <code>attr-lt-[s/m/l]</code>, <code>attr-gt-[xs/s/m]</code> and <code>attr-[xs/s/m/l]</code>, for example: <code>drawer-lt-s</code>.
+Attributes declared with <code>attr-lt-[s/m/l]</code> are active up to the specified page width.
+Attribites declared with <code>attr-gt-[xs/s/m]</code> are active above the specified page width.
+Attribites declared with <code>attr-[xs/s/m]</code> are active at the specified page width.</p>
+<p>Attributes on descendent elements | Options     | Default      | Description
+<code>hide</code>                            | <em>boolean</em>   | -            | Set display: none for this element.</p>
+<p>Hide can also be used with the <code>attr-lt-[s/m/l]</code>, <code>attr-gt-[xs/s/m]</code> and <code>attr-[xs/s/m/l]</code> pattern.</p>
 <h2 id="methods">Methods</h2>
 <table>
 <thead>
@@ -114,41 +153,25 @@ Flips between two content elements with a CSS Animation, similar to flipping a p
 </thead>
 <tbody>
 <tr>
-<td><code>toggle()</code></td>
-<td>None.</td>
-<td>Nothing.</td>
-<td>Toggle the flipbox.</td>
+<td><code>toggleDrawer()</code></td>
+<td></td>
+<td></td>
+<td>Toggle the drawer state.</td>
 </tr>
 <tr>
-<td><code>showFront()</code></td>
-<td>None.</td>
-<td>Nothing.</td>
-<td>Show the front side.</td>
+<td><code>openDrawer()</code></td>
+<td></td>
+<td></td>
+<td>Open the drawer.</td>
 </tr>
 <tr>
-<td><code>showBack()</code></td>
-<td>None.</td>
-<td>Nothing.</td>
-<td>Show the back side.</td>
+<td><code>closeDrawer()</code></td>
+<td></td>
+<td></td>
+<td>close the drawer.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="events">Events</h2>
-<table>
-<thead>
-<tr>
-<th>Event</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>flipend</code></td>
-<td>Triggers when the flipping is complete.</td>
-</tr>
-</tbody>
-</table>
-<p>triggering <code>reveal</code> on one of the elements inside the flipbox, will reveal the corresponding side.</p>
 <h2 id="development">Development</h2>
 <p>Brick components use <a href="http://learnboost.github.com/stylus/">Stylus</a> to generate their CSS.</p>
 <p>This repository comes outfitted with a set of tools to ease the development process.</p>
@@ -165,7 +188,7 @@ Flips between two content elements with a CSS Animation, similar to flipping a p
 <p>To run the development server:</p>
 <ul>
 <li>Run <code>gulp server</code></li>
-<li>Navigate to <code>http:localhost:3001</code></li>
+<li>Navigate to <code>http://localhost:3001</code></li>
 </ul>
 <p>To simply build and lint your code, run <code>gulp build</code>.</p>
 <p>You can also push your code to GitHub Pages by running <code>gulp deploy</code>.</p>

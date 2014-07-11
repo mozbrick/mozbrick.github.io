@@ -6,20 +6,18 @@
     <title>Brick</title>
     <script src="/bower_components/platform/platform.js"></script>
     <link rel="import" href="/bower_components/brick/dist/brick.html">
+    <link rel="stylesheet" href="//code.cdn.mozilla.net/fonts/fira.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/bower_components/fira/fira.css">
     <link rel="stylesheet" href="/media/css/site.css">
-    <style>
-
-    </style>
   </head>
   <body>
-    <brick-layout horizontal class="main">
+    <brick-layout horizontal class="main" id="main">
       <header drawer-max-s>
-        <h1 class="logo"><img src="/media/img/logo.svg">Brick</h1>
+        <a class="logo" href="/index.html"><h1>Brick</h1></a>
         <nav>
-          <ul>
+<!--           <ul>
             <li><a is="route-link" href="/about.html">About</a></li>
+            <li><a is="route-link" href="/blog/index.html">Blog</a></li>
             <li><a is="route-link" href="/docs/faq.html">FAQ</a></li>
             <li>
               <a is="route-link" href="/download.html">
@@ -27,13 +25,15 @@
               </a>
             </li>
           </ul>
-          <ul>
-            <li><a is="route-link" href="/docs/usage.html">Usage</a></li>
+ -->          <ul>
+            <!-- <li><a is="route-link" href="/docs/usage.html">Usage</a></li> -->
             <li><div>Components</div>
               <ul>
-                <li><a is="route-link" href="/docs/brick-calendar.html">brick-calendar</a></li>
+                <li><a is="route-link" href="/docs/brick-action.html">brick-action</a></li>
                 <li><a is="route-link" href="/docs/brick-deck.html">brick-deck</a></li>
                 <li><a is="route-link" href="/docs/brick-flipbox.html">brick-flipbox</a></li>
+                <li><a is="route-link" href="/docs/brick-layout.html">brick-layout</a></li>
+                <li><a is="route-link" href="/docs/brick-tabbar.html">brick-tabbar</a></li>
               </ul>
             </li>
           </ul>
@@ -48,9 +48,13 @@
                 <i class="fa fa-github fa-fw"></i>&nbsp; GitHub
               </a>
             </li>
+          </ul>
         </nav>
       </header>
       <article flex>
+        <brick-action trigger="click" target="main" action="toggleDrawer">
+          <button class="menu" hide-gt-s><i class="fa fa-bars"></i></button>
+        </brick-action>
 <h1 id="brick-deck">brick-deck</h1>
 <p>A <a href="https://github.com/mozbrick/brick/">Brick</a> box element in which cards can be cycled independently of order with a variety of different transitions.</p>
 <h2 id="demo">Demo</h2>
@@ -233,6 +237,7 @@
 </ul>
 <p>To simply build and lint your code, run <code>gulp build</code>.</p>
 <p>You can also push your code to GitHub Pages by running <code>gulp deploy</code>.</p>
+
       </article>
     </div>
     <script>
