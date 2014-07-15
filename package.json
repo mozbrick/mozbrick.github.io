@@ -15,6 +15,8 @@
     "gulp-footer": "^1.0.4",
     "gulp-header": "^1.0.2",
     "gulp-concat": "^2.3.3",
+    "gulp-connect": "2.0.6",
+    "gulp-rename": "^1.2.0",
     "sort-stream": "^1.0.0"
   }
 }
