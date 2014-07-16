@@ -67,6 +67,17 @@ gulp.task('blog', function () {
     .pipe(header(content.header))
     .pipe(footer(content.footer))
     .pipe(gulp.dest('blog'));
+
+  gulp.src(paths.blog)
+    .pipe(marked())
+    .pipe(rename(function (path) {
+      path.extname = '.html';
+    }))
+    .pipe(header('<section>'))
+    .pipe(footer('</section>'))
+    .pipe(header(content.header))
+    .pipe(footer(content.footer))
+    .pipe(gulp.dest('blog'));
 });
 
 gulp.task('connect', function() {

@@ -22,15 +22,17 @@
     "brick-action": "mozbrick/brick-action",
     "brick-deck": "mozbrick/brick-deck",
     "brick-flipbox": "mozbrick/brick-flipbox",
+    "brick-form": "mozbrick/brick-form",
     "brick-layout": "mozbrick/brick-layout",
+    "brick-storage-indexeddb": "mozbrick/brick-storage-indexeddb",
     "brick-tabbar": "mozbrick/brick-tabbar",
     "es6-promise": "components/es6-promise#~1.0.0"
   },
-  "_release": "8f6edf8748",
+  "_release": "57aa331dac",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "8f6edf874870234228d4cd9c03e6bd6e0f81b9e2"
+    "commit": "57aa331dac283c5fe83bedb396838b8b831400cc"
   },
   "_source": "git://github.com/mozbrick/brick.git",
   "_target": "master",
