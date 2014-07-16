@@ -18,7 +18,7 @@ It listens to an event on a source elemenet and then calls a method on a target 
 2. Import Custom Element:
 
     ```html
-    <link rel="import" href="src/element.html">
+    <link rel="import" href="src/brick-action.html">
     ```
 
 3. Start using it:
