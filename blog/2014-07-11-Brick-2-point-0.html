@@ -69,14 +69,14 @@
 <h2 id="what-is-brick-not-">What is Brick not?</h2>
 <p>We have very specific goals for Brick- to make building webapp interfaces easier. There are other projects that use the same technologies (like Google&#39;s excellent Polymer) that provide a more complete web application development solution. The motto on the Brick project is &quot;strong opinions, tightly scoped&quot;- meaning we don&#39;t intend to solve the problems of code stucture, module loading, data binding, or really any other problem other than webapp interfaces. However, because Brick components use the Custom Elements APIs to define new HTML elements, any web framework that has the ability to create or manipulate DOM (meaning pretty much all of them) can easily interoperate with Brick components.</p>
 <h2 id="custom-elements">Custom Elements</h2>
-<p>One reason Brick is different from similar projects such as Bootstrap is its use of the new Web Components browser APIs. Web Components lets web developers do new exciting things with HTML, CSS, and JavaScript:</p>
+<p>One reason Brick is different from similar projects such as Bootstrap is its use of the new Web Components browser APIs. Web Components let web developers do new exciting things with HTML, CSS, and JavaScript:</p>
 <ul>
 <li>Define new HTML elements and specify how they work (<a href="http://www.html5rocks.com/en/tutorials/webcomponents/customelements/">Custom Elements</a>)</li>
 <li>Define HTML templates that can be repeatedly cloned (<a href="http://www.html5rocks.com/en/tutorials/webcomponents/template/">Template Element</a>)</li>
 <li>Hide the complexity of a widget from the rest of a document and prevent its CSS from leaking (<a href="http://www.html5rocks.com/en/tutorials/webcomponents/shadowdom/">Shadow DOM</a>)</li>
 <li>Load related JavaScript, CSS, and HTML dependencies all in one action (<a href="http://www.html5rocks.com/en/tutorials/webcomponents/imports/">HTML Imports</a>)</li>
 </ul>
-<p>These new APIs have gotten developers excited about the Web in a whole new way, and people have begun building their own Custom Elements. Brick, Polymer, and many other third-party Custom Elements are being distributed and indexed as part of an awesome burgeoning <a href="//customelements.io">Custom Elements</a> ecosystem.</p>
+<p>These new APIs have gotten developers excited about the Web in a whole new way, and people have begun building and sharing their own Custom Elements. Brick, Polymer, and many other third-party Custom Elements are being distributed and indexed as part of an awesome burgeoning <a href="//customelements.io">Custom Elements</a> ecosystem.</p>
 <p>People have asked how their component can become part of Brick. We love contributions, but not every component may match the coding and API style of Brick, or meet its goals. Just as many programming languages have a standard library as well as a rich ecosystem of third-party modules, Brick aims to be a &#39;standard library&#39; of webapp-specific Custom Elements, but will support and interoperate with the larger community of components.</p>
 <h2 id="on-x-tag">On X-Tag</h2>
 <p>In the early(er) days of Web Components, the Custom Elements standard was very much so in flux. It was hard to build to the standard or even a polyfill because the APIs kept changing. <a href="https://github.com/csuwildcat/">Daniel Buchner</a> and <a href="https://github.com/pennyfx/">Arron Schaar</a> concieved of <a href="http://x-tags.org/">x-tag</a>, which provided useful helper functions around events and the component definition process. The library was a godsend, and using it Brick was able to get off the ground. Over time, however, the APIs have settled, and the project found itself in need of the other features of the Web Components standards. These features are all part of the <a href="https://github.com/Polymer/platform/">platform.js</a> polyfill that is part of Polymer and available externally as well. Additionally, the rising popularity of Google&#39;s Polymer and its syntax for describing Custom Elements grew, and when users came to contribute to Brick and x-tag, they found themselves facing an unfamiliar syntax and an underlying library that was frequently not well documented. The decision was made that if users encounter Custom Element registration syntax, it should be the standards-based syntax. Brick components are now written in a &#39;vanilla&#39; style, using the standards-based APIs directly.</p>
@@ -138,7 +138,7 @@
 </div>
 
 <h2 id="so-what-s-next-">So What&#39;s Next?</h2>
-<p>After deciding to use the platform.js polyfills and remove x-tag, Brick is being built from the ground-up to be lighter, more modular, and easier to contribute to. It&#39;s a big undertaking, so we&#39;re moving from 1.0 to 2.0 to reflect the scale of the work. It&#39;s a more-or-less reboot of the entire project, and I as well as the rest of the team are very excited about it. We haven&#39;t been vocal enough about updates, but I&#39;m committing to posting regularly here as well as on Twitter at <a href="https://twitter.com/mozbrick/">@mozbrick</a>. Stay tuned!</p>
+<p>After deciding to use the platform.js polyfills and remove the x-tag library, Brick is being built from the ground-up to be lighter, more modular, and easier to contribute to. It&#39;s a big undertaking, so we&#39;re moving from 1.0 to 2.0 to reflect the scale of the work. It&#39;s a more-or-less reboot of the entire project, and I as well as the rest of the team are very excited about it. We haven&#39;t been vocal enough about updates, but I&#39;m committing to posting regularly here as well as on Twitter at <a href="https://twitter.com/mozbrick/">@mozbrick</a>. Stay tuned!</p>
 <p>~potch</p>
 <p><small>written 15 July 2014 &middot; <a href="/blog/2014-07-11-Brick-2-point-0.html">permalink</a></small></p>
 </section>
@@ -161,6 +161,15 @@
         prototype: RouteLinkProto,
         extends: 'a'
       });
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-52905820-1', 'auto');
+      ga('send', 'pageview');
     </script>
   </body>
 </html>
