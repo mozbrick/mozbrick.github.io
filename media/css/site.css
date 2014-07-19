@@ -20,13 +20,9 @@ h1 {
 
 .main {
   height: 100%;
-  display: flex;
-  flex-direction: row;
 }
 .main header {
   background: #EAEFF2;
-  display: flex;
-  flex-direction: column;
   overflow: auto;
   padding: 1rem 0;
   max-width: 90%;
@@ -86,8 +82,6 @@ nav li {
 
 article {
   color: #444;
-  flex: 1;
-  overflow: auto;
   padding: 1em 2em;
   word-wrap: break-word;
 }
@@ -124,9 +118,13 @@ i, em {
   margin: 2em 0;
 }
 .diagram .layer {
+  -webkit-flex: 1;
   flex: 1;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: column;
   flex-direction: column;
+  -webkit-justify-content: flex-end;
   justify-content: flex-end;
 }
 .diagram .label {
@@ -134,11 +132,14 @@ i, em {
   text-align: center;
   line-height: 40px;
   height: 40px;
+  -webkit-order: 1;
   order: 1;
   margin: 0 1px;
 }
 .diagram .children {
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-flow: row;
   flex-flow: row;
 }
 .diagram .label.platform {
