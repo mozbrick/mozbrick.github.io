@@ -1,0 +1,78 @@
+@import '../bower_components/brick-common/styles/mixins'
+@import '../bower_components/brick-common/styles/params'
+
+$xs = {                end:  768px, name: xs }
+$s  = { start:  768px, end:  992px, name: s  }
+$m  = { start:  992px, end: 1200px, name: m  }
+$l  = { start: 1200px,              name: l  }
+
+/**
+ * example:
+ *  & > [horizontal-lt-s/m/l] { mixin() }
+ *  & > [horizontal-gt-xs/s/m] { mixin() }
+ *  & > [horizontal-xs/s/m/l] { mixin() }
+ *  & > [horizontal] { mixin() }
+ * would be created by:
+ * responsify("& > ", horizontal, mixin)
+ */
+responsify(selector, attr, content) {
+  // attr-lt-[s,m,l]
+  for $range in $s $m $l {
+    {selector}[{attr}-lt-{$range.name}] {
+      @media (max-width: $range.start) {
+        content();
+      }
+    }
+  }
+  // attr-gt-[xs,s,m]
+  for $range in $xs $s $m {
+    {selector}[{attr}-gt-{$range.name}] {
+      @media (min-width: $range.end) {
+        content();
+      }
+    }
+  }
+  // attr-[xs,s,m,l]
+  for $range in $s $m {
+    {selector}[{attr}-{$range.name}] {
+      @media (max-width: $range.start) and (min-width: $range.end) {
+        content();
+      }
+    }
+  }
+  // attr
+  {selector}[{attr}] {
+    content();
+  }
+}
+
+brick-menu {
+
+  flexbox();
+
+  // vertical
+  flex-direction: column;
+
+  // horizontal
+  _horizontal() {
+    // menu-item/tab
+    flex-direction: row;
+    & > * {
+      flex(1);
+      box-sizing: border-box;
+      display: inline-block;
+      min-width: auto;
+      min-height: auto;
+      vertical-align: middle;
+      text-align: center;
+      // menu-item/tab content
+      & > *:only-child{
+        vertical-align: top;
+        height: 100%;
+        width: 100%;
+        margin: 0 !important;
+      }
+    }
+  }
+  responsify("&", horizontal, _horizontal);
+}

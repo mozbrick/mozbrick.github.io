@@ -25,11 +25,11 @@
   "devDependencies": {
     "brick-flipbox": "mozbrick/brick-flipbox"
   },
-  "_release": "de9603bde5",
+  "_release": "7a2fb4dbdb",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "de9603bde57a0803547feb206ff9a12713665f99"
+    "commit": "7a2fb4dbdbabb02f42d9806fab982ced57aa8629"
   },
   "_source": "git://github.com/mozbrick/brick-action.git",
   "_target": "*",

@@ -1,0 +1,26 @@
+{
+  "name": "brick-appbar",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mozbrick/brick-appbar",
+  "authors": [
+    "mozilla"
+  ],
+  "description": "A component providing header bar.",
+  "main": "src/brick-appbar.html",
+  "keywords": [
+    "brick",
+    "webcomponents"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "brick-common": "*",
+    "platform": "Polymer/platform"
+  }
+}

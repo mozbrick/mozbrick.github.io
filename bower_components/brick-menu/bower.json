@@ -1,0 +1,26 @@
+{
+  "name": "brick-menu",
+  "version": "0.0.0",
+  "homepage": "https://github.com/mozbrick/brick-menu",
+  "authors": [
+    "mozilla"
+  ],
+  "description": "A simple menu.",
+  "main": "src/brick-menu.html",
+  "keywords": [
+    "brick",
+    "webcomponents"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "brick-common": "*",
+    "platform": "Polymer/platform"
+  }
+}

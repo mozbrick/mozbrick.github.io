@@ -152,9 +152,7 @@ brick-layout > [flex] {
   }
 }
 @media (min-width: 992px) {
-  color: red !important;
   brick-layout [hide-gt-s] {
-    color: red !important;
     display: none;
   }
 }

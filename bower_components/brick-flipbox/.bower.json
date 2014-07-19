@@ -22,11 +22,11 @@
     "brick-common": "*",
     "platform": "Polymer/platform"
   },
-  "_release": "e2a97fe3c1",
+  "_release": "b3bbf6b8e4",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "e2a97fe3c17abdd1be9fc34d52fdfe288bdce4b6"
+    "commit": "b3bbf6b8e4a21fe2b592d31aa9cc12ad6cd390e2"
   },
   "_source": "git://github.com/mozbrick/brick-flipbox.git",
   "_target": "*",

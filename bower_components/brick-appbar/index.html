@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <title>brick-appbar</title>
+
+    <!-- Importing Polyfill -->
+    <script src="bower_components/platform/platform.js"></script>
+
+    <!-- Importing Custom Elemenent -->
+    <link rel="import" href="src/brick-appbar.html">
+
+    <style>
+      .simple {
+        color: #666;
+        background-color: #ddd;
+        background-image: none;
+        font-size: 2.5rem;
+      }
+
+      brick-appbar.simple > *:before {
+        top: 3px;
+        bottom: 3px;
+      }
+
+      .ffos {
+        color: white;
+        background-image: none;
+        background-color: orange;
+      }
+
+      .ffos button {
+        background-color: orange;
+      }
+
+      .ffos button:hover {
+        background-color: rgb(255, 198, 0);
+      }
+
+      brick-appbar.ffos > *:before {
+        top: 3px;
+        bottom: 3px;
+      }
+      brick-appbar.ffos {
+        box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+      }
+
+      #mobile-device {
+        height: 200px;
+        width: 320px;
+        border: solid 1px black;
+        background-color: #dedede;
+      }
+
+      h2 {
+        font-size: 24pt;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Using Custom Element -->
+    <h1>AppBar demo</h1>
+
+    <brick-appbar heading="default">
+      <button>☰</button>
+      <button>+</button>
+      <button>?</button>
+    </brick-appbar>
+
+    <br />
+
+    <brick-appbar class="simple">
+      <button>☰</button>
+      <h2>Simple Styles</h2>
+      <button>+</button>
+      <button>-</button>
+      <button>?</button>
+    </brick-appbar>
+
+    <br />
+
+    <div id="mobile-device">
+      <brick-appbar class="simple ffos" subheading="(2)">
+        <button>☰</button>
+        <h2>Messages</h2>
+        <button>+</button>
+      </brick-appbar>
+      <ul>
+       <li>Message 1</li>
+        <li>Message 2</li>
+      <ul>
+    </div>
+
+  </body>
+</html>

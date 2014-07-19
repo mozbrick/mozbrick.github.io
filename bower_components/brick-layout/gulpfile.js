@@ -15,6 +15,7 @@ var paths = {
   'stylesheets': 'src/*.styl',
   'src': 'src/*',
   'index': 'index.html',
+  'examples': 'example/*',
   'bowerComponents': 'bower_components/**/*',
   'testfiles': ['test/*', 'bower_components/platform/platform.js']
 };
@@ -87,6 +88,7 @@ gulp.task('deploy', function () {
   gulp.src([
     paths.index,
     paths.src,
+    paths.examples,
     paths.bowerComponents
   ],{base:'./'})
     .pipe(ghpages());

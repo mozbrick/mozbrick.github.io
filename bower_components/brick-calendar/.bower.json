@@ -1,0 +1,34 @@
+{
+  "name": "brick-calendar",
+  "homepage": "https://github.com/mozbrick/brick-calendar",
+  "authors": [
+    "mozilla"
+  ],
+  "description": "A component acting as a calendar widget that can be manipulated with minimal user-written code/layout.",
+  "main": "src/brick-calendar.html",
+  "keywords": [
+    "brick",
+    "webcomponents"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "brick-common": "*",
+    "platform": "Polymer/platform"
+  },
+  "_release": "e8465d83f9",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "e8465d83f923271f85000bb3a192165342a793e3"
+  },
+  "_source": "git://github.com/mozbrick/brick-calendar.git",
+  "_target": "*",
+  "_originalSource": "mozbrick/brick-calendar"
+}

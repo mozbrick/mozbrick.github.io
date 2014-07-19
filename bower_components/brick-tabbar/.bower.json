@@ -25,11 +25,11 @@
   "devDependencies": {
     "brick-deck": "mozbrick/brick-deck"
   },
-  "_release": "8eff46a031",
+  "_release": "cef29ed1b1",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "8eff46a03133908b776a4464fb25f23c1e22f711"
+    "commit": "cef29ed1b1dbf8ed2105784f8bab4c548b8fdc20"
   },
   "_source": "git://github.com/mozbrick/brick-tabbar.git",
   "_target": "*",

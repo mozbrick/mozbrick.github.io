@@ -1,0 +1,36 @@
+@import '../bower_components/brick-common/styles/mixins'
+@import '../bower_components/brick-common/styles/params'
+
+brick-appbar {
+  padding: 0;
+  width: 100%;
+  flexbox();
+
+  &, & * {
+    box-sizing(border-box);
+  }
+
+  & > * {
+    border: none;
+    vertical-align: middle;
+    text-align:center;
+
+    -webkit-flex-align: center;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    text-align: center;
+
+  }
+
+  & > h1, h2, h3, h4, h5, h6 {
+    flex(1);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+  }
+
+  & > h1:after, h2:after, h3:after, h4:after, h5:after, h6:after {
+    content: attr(subheading);
+  }
+}
