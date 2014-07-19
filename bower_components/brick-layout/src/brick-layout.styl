@@ -1,4 +1,5 @@
-@import '../bower_components/brick-common/styles/mixins'
+// not using "transparent" prefixing for now
+// @import '../bower_components/brick-common/styles/mixins'
 @import '../bower_components/brick-common/styles/params'
 
 $xs = {                end:  768px, name: xs }
@@ -48,18 +49,22 @@ responsify(selector, attr, content) {
 
 brick-layout {
 
-  display: flex;
   overflow: hidden;
   box-sizing: border-box;
   box-orient: vertical;
-  flex-direction: column;
   position: relative;
+
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: column;
+  flex-direction: column;
 
   /**
    * Horizontal Layout
    *--------------------------------------------------*/
   _horizontal() {
     box-orient: horizontal;
+    -webkit-flex-direction: row;
     flex-direction: row;
   }
   responsify("&", horizontal, _horizontal);
@@ -68,8 +73,9 @@ brick-layout {
    *  Flex-children
    *--------------------------------------------------*/
   _flex() {
-    flex: 1;
     overflow: auto;
+    -webkit-flex: 1;
+    flex: 1;
   }
   responsify("& > ", flex, _flex);
 
@@ -88,7 +94,9 @@ brick-layout {
   _drawer() {
     height: 100%;
     position: absolute;
+    -webkit-transform: translate(-100%,0);
     transform: translate(-100%,0);
+    -webkit-transition: -webkit-transform .2s ease;
     transition: transform .2s ease;
   }
   responsify("& > ", drawer, _drawer)
@@ -105,15 +113,18 @@ brick-layout {
     & > [drawer-{$s.name}],
     & > [drawer-{$m.name}],
     & > [drawer-{$l.name}] {
+      -webkit-transform: translate(0,0);
       transform: translate(0,0);
     }
   }
 
   _drawertop() {
     position: absolute;
-    transform: translate(0,-100%);
-    transition: transform .2s ease;
     width: 100%;
+    -webkit-transform: translate(0,-100%);
+    transform: translate(0,-100%);
+    -webkit-transition: -webkit-transform .2s ease;
+    transition: transform .2s ease;
   }
   responsify("& > ", drawer-top, _drawertop)
   &[open] {
@@ -128,6 +139,7 @@ brick-layout {
     & > [drawer-top-{$s.name}],
     & > [drawer-top-{$m.name}],
     & > [drawer-top-{$l.name}] {
+      -webkit-transform: translate(0,0);
       transform: translate(0,0);
     }
   }
