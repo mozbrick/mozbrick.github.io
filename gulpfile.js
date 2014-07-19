@@ -91,3 +91,5 @@ gulp.task('watch', function() {
 });
 
 gulp.task('server', ['build', 'connect', 'watch']);
+
+gulp.task('default', ['server']);
