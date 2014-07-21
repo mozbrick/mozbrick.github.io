@@ -15,10 +15,7 @@
         margin: 0;
         height: 100%;
       }
-      #layout {
-        height: 100%;
-      }
-      #header {
+      header {
         border-bottom: 1px solid #ccc;
         padding: 12px 9px 9px 9px;
       }
@@ -36,35 +33,31 @@
       #article {
         padding: 9px;
       }
-
+      brick-layout {
+        height: 100%;
+      }
     </style>
   </head>
   <body>
 
-    <brick-layout id="layout">
-
-      <header id="header">
-        <button id="menu-button" hide-gt-xs>M</button>
+    <brick-layout>
+      <header>
+        <brick-action target="main" action="toggleDrawer">
+          <button hide-gt-xs>M</button>
+        </brick-action>
         Brick Layout Example: Simple responsive Drawer
       </header>
-
-      <brick-layout id="main" horizontal flex>
-
+      <brick-layout horizontal id="main" flex>
         <brick-menu id="menu" drawer-lt-s>
           <brick-menu-item selected>Menu Item 1</brick-menu-item>
           <brick-menu-item>Menu Item 2</brick-menu-item>
           <brick-menu-item>Menu Item 3</brick-menu-item>
         </brick-menu>
-
         <div id="article" flex>
           article
         </div>
-
       </brick-layout>
-
     </brick-layout>
-
-    <brick-action source="menu-button" target="main" action="toggleDrawer"></brick-action>
 
   </body>
 </html>

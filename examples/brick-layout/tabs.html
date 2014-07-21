@@ -3,23 +3,20 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
-    <title>brick-layout example: drawer</title>
+    <title>brick-layout example: tabs</title>
 
     <script src="../../bower_components/platform/platform.js"></script>
 
     <link rel="import" href="../../bower_components/brick/dist/brick.html">
 
     <style>
+
       html, body {
         padding: 0;
         margin: 0;
         height: 100%;
-        box-sizing: border-box;
       }
-      #layout {
-        height: 100%;
-      }
-      #header {
+      header {
         border-bottom: 1px solid #ccc;
         padding: 12px 9px 9px 9px;
       }
@@ -39,7 +36,9 @@
         font-size: 6em;
         text-align: center;
       }
-
+      brick-layout {
+        height: 100%;
+      }
       @media (max-width: 768px) {
         #content {
           order: 1;
@@ -61,14 +60,11 @@
   </head>
   <body>
 
-    <brick-layout id="layout">
-
-      <header id="header">
+    <brick-layout>
+      <header>
         Brick Layout Example: Responsive Tabs
       </header>
-
-      <brick-layout id="main" horizontal-gt-xs flex>
-
+      <brick-layout horizontal-gt-xs flex>
         <brick-menu id="menu" horizontal-lt-s>
           <brick-action selected target="card1" action="reveal">
             Menu Item 1
@@ -80,18 +76,13 @@
             Menu Item 3
           </brick-action>
         </brick-menu>
-
         <brick-deck id="content" flex selected-index="0">
           <brick-card id="card1" selected>1</brick-card>
           <brick-card id="card2">2</brick-card>
           <brick-card id="card3">3</brick-card>
         </brick-deck>
-
       </brick-layout>
-
     </brick-layout>
-
-
 
   </body>
 </html>
