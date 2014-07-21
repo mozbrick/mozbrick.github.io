@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+    <title>brick-layout example: simple</title>
+
+    <script src="../../bower_components/platform/platform.js"></script>
+
+    <link rel="import" href="../../bower_components/brick/dist/brick.html">
+
+    <style>
+
+      html, body {
+        padding: 0;
+        margin: 0;
+        height: 100%;
+      }
+      header {
+        border-bottom: 1px solid #ccc;
+      }
+      #menu {
+        border-right: 1px solid #ccc;
+      }
+      brick-layout {
+        height: 100%;
+      }
+
+    </style>
+  </head>
+  <body>
+
+    <brick-layout>
+      <header>
+        Brick-Layout Basic Examples: Simple
+      </header>
+      <brick-layout horizontal flex>
+        <div id="menu">
+          <ul>
+            <li>Menu Item 1</li>
+            <li>Menu Item 2</li>
+            <li>Menu Item 3</li>
+          </ul>
+        </div>
+        <div id="content" flex>
+          Content goes here.
+        </div>
+      </brick-layout>
+    </brick-layout>
+
+  </body>
+</html>
