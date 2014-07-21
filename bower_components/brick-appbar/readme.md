@@ -35,9 +35,9 @@
 
 ## Options
 
-Attribute     | Options     | Default      | Description
----           | ---         | ---          | ---
-`heading`     | *string*    |              | Edits the header text.
+Attribute     | Options     | Description
+---           | ---         | ---
+`heading`     | *string*    | Edits the header text.
 
 ## Methods
 
@@ -45,11 +45,6 @@ Accessor         | Description
 ---              | ---
 `heading `       | corresponds to the header text attribute.
 
-## Events
-
-Event         | Description
----           | ---
-`onsomething` | Triggers when something happens.
 
 ## Development
 
