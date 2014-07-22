@@ -1,10 +1,10 @@
-# brick-calendar
+# brick-appbar
 
-> A [Brick](https://github.com/mozbrick/brick/) custom element starter-kit.
+> A [Brick](https://github.com/mozbrick/brick/) component providing a header bar.
 
 ## Demo
 
-[Check it live!](http://mozbrick.github.io/brick-calendar)
+[Check it live!](http://mozbrick.github.io/brick-appbar)
 
 ## Usage
 
@@ -17,32 +17,34 @@
 2. Import Custom Element:
 
     ```html
-    <link rel="import" href="src/element.html">
+    <link rel="import" href="src/brick-appbar.html">
     ```
 
 3. Start using it:
 
+    You can use any elements in place of the `<button>` tags in the example below. A heading `<h1>` to `<h6>` element is required, and will be created automatically if not provided.
+    
     ```html
-    <brick-calendar></brick-calendar>
+    <brick-appbar>
+      <button>=</button>
+      <h2>Email</h2>
+      <button>+</button>
+      <button>?</button>
+    </brick-appbar>
     ```
 
 ## Options
 
-Attribute     | Options     | Default      | Description
----           | ---         | ---          | ---
-`foo`         | *string*    | `bar`        | An Attribute.
+Attribute     | Options     | Description
+---           | ---         | ---
+`heading`     | *string*    | Edits the header text.
 
 ## Methods
 
-Method        | Parameters   | Returns     | Description
----           | ---          | ---         | ---
-`method()`    | None.        | Nothing.    | A method.
+Accessor         | Description
+---              | ---
+`heading `       | corresponds to the header text attribute.
 
-## Events
-
-Event         | Description
----           | ---
-`onsomething` | Triggers when something happens.
 
 ## Development
 

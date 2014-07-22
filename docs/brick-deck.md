@@ -1,6 +1,6 @@
 # brick-deck
 
-A [Brick](https://github.com/mozbrick/brick/) box element in which cards can be cycled independently of order with a variety of different transitions.
+> A [Brick](https://github.com/mozbrick/brick/) box element in which cards can be cycled independently of order with a variety of different transitions.
 
 ## Demo
 
@@ -53,7 +53,7 @@ A [Brick](https://github.com/mozbrick/brick/) box element in which cards can be 
     </td>
     <td>-</td>
     <td>
-      Defines the type of animation to use for cycling between cards.
+      Defines the type of animation to use for cycling between cards. 
       The default is no transition animation.
       <br>
       This property can either be set as an HTML attribute under the name <code>transition-type</code>,
@@ -79,7 +79,7 @@ A [Brick](https://github.com/mozbrick/brick/) box element in which cards can be 
     </td>
     <td>-</td>
     <td>
-      Toggle allowance of looping when calling nextCard and previousCard methods has reached the end of either side of the index.
+      Toggle allowance of looping when calling nextCard and previousCard methods has reached the end of either side of the index.    
     </td>
   </tr>
 </table>
@@ -88,9 +88,9 @@ A [Brick](https://github.com/mozbrick/brick/) box element in which cards can be 
 
 Poperty               | Type      | Description
 ---                   | ---       | ---
-`transitionType`      | *string*  | corresponds to the `transition-type` attribute
-`selectedIndex`       | *string*  | corresponds to the `selected-index` attribute
-`loop`                | *boolean* | corresponds to the `loop` attribute
+`transitionType`      | *string*  | corresponds to the `transition-type` attribute 
+`selectedIndex`       | *string*  | corresponds to the `selected-index` attribute 
+`loop`                | *boolean* | corresponds to the `loop` attribute 
 `cards` (getter only) | *array*   | array of all the brick-card elements contained in an brick-deck
 `selectedCard` (getter only) | *brick-card* | the brick-card DOM element that is currently displayed by the deck. Returns null if no such card exists.
 

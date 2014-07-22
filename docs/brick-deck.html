@@ -30,9 +30,14 @@
             <li><div>Components</div>
               <ul>
                 <li><a is="route-link" href="/docs/brick-action.html">brick-action</a></li>
+                <li><a is="route-link" href="/docs/brick-appbar.html">brick-appbar</a></li>
+                <li><a is="route-link" href="/docs/brick-calendar.html">brick-calendar</a></li>
                 <li><a is="route-link" href="/docs/brick-deck.html">brick-deck</a></li>
                 <li><a is="route-link" href="/docs/brick-flipbox.html">brick-flipbox</a></li>
+                <li><a is="route-link" href="/docs/brick-form.html">brick-form</a></li>
                 <li><a is="route-link" href="/docs/brick-layout.html">brick-layout</a></li>
+                <li><a is="route-link" href="/docs/brick-menu.html">brick-menu</a></li>
+                <li><a is="route-link" href="/docs/brick-storage-indexeddb.html">brick-storage-indexeddb</a></li>
                 <li><a is="route-link" href="/docs/brick-tabbar.html">brick-tabbar</a></li>
               </ul>
             </li>
@@ -56,7 +61,9 @@
           <button class="menu" hide-gt-s><i class="fa fa-bars"></i></button>
         </brick-action>
 <h1 id="brick-deck">brick-deck</h1>
+<blockquote>
 <p>A <a href="https://github.com/mozbrick/brick/">Brick</a> box element in which cards can be cycled independently of order with a variety of different transitions.</p>
+</blockquote>
 <h2 id="demo">Demo</h2>
 <p><a href="http://mozbrick.github.io/brick-deck">Check it live!</a></p>
 <h2 id="usage">Usage</h2>
@@ -98,7 +105,7 @@
     </td>
     <td>-</td>
     <td>
-      Defines the type of animation to use for cycling between cards.
+      Defines the type of animation to use for cycling between cards. 
       The default is no transition animation.
       <br>
       This property can either be set as an HTML attribute under the name <code>transition-type</code>,
@@ -124,8 +131,7 @@
     </td>
     <td>-</td>
     <td>
-      Toggle allowance of looping when calling nextCard and previousCard methods has reached the end of either side of the index.
-    </td>
+      Toggle allowance of looping when calling nextCard and previousCard methods has reached the end of either side of the index.<br>    </td>
   </tr>
 </table>
 
@@ -142,17 +148,17 @@
 <tr>
 <td><code>transitionType</code></td>
 <td><em>string</em></td>
-<td>corresponds to the <code>transition-type</code> attribute</td>
+<td>corresponds to the <code>transition-type</code> attribute </td>
 </tr>
 <tr>
 <td><code>selectedIndex</code></td>
 <td><em>string</em></td>
-<td>corresponds to the <code>selected-index</code> attribute</td>
+<td>corresponds to the <code>selected-index</code> attribute </td>
 </tr>
 <tr>
 <td><code>loop</code></td>
 <td><em>boolean</em></td>
-<td>corresponds to the <code>loop</code> attribute</td>
+<td>corresponds to the <code>loop</code> attribute </td>
 </tr>
 <tr>
 <td><code>cards</code> (getter only)</td>
