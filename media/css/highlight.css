@@ -10,7 +10,9 @@
 .highlight > pre {
   padding: .5em;
 }
-
+/*
+ * taken from https://github.com/richleland/pygments-css/blob/master/github.css
+ */
 .c  { color: #999988; font-style: italic } /* Comment */
 .err{ color: #a61717; background-color: #e3d2d2 } /* Error */
 .k  { color: #000000; font-weight: bold } /* Keyword */
