@@ -30,9 +30,14 @@
             <li><div>Components</div>
               <ul>
                 <li><a is="route-link" href="/docs/brick-action.html">brick-action</a></li>
+                <li><a is="route-link" href="/docs/brick-appbar.html">brick-appbar</a></li>
+                <li><a is="route-link" href="/docs/brick-calendar.html">brick-calendar</a></li>
                 <li><a is="route-link" href="/docs/brick-deck.html">brick-deck</a></li>
                 <li><a is="route-link" href="/docs/brick-flipbox.html">brick-flipbox</a></li>
+                <li><a is="route-link" href="/docs/brick-form.html">brick-form</a></li>
                 <li><a is="route-link" href="/docs/brick-layout.html">brick-layout</a></li>
+                <li><a is="route-link" href="/docs/brick-menu.html">brick-menu</a></li>
+                <li><a is="route-link" href="/docs/brick-storage-indexeddb.html">brick-storage-indexeddb</a></li>
                 <li><a is="route-link" href="/docs/brick-tabbar.html">brick-tabbar</a></li>
               </ul>
             </li>
@@ -71,15 +76,16 @@
 </li>
 <li><p>Start using it:</p>
 <pre><code class="lang-html"> &lt;brick-layout&gt;&lt;/brick-layout&gt;</code></pre>
+<p> See <a href="#examples">Examples</a> for detailed examples.</p>
 </li>
 </ol>
 <h2 id="options">Options</h2>
+<h3 id="attributes-on-lt-brick-layout-gt-">Attributes on &lt;brick-layout&gt;</h3>
 <table>
 <thead>
 <tr>
 <th>Attribute</th>
-<th>Options</th>
-<th>Default</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -87,29 +93,21 @@
 <tr>
 <td><code>horizontal</code></td>
 <td><em>boolean</em></td>
-<td>-</td>
-<td>Use a horizontal instead of the default vertical layout.</td>
-</tr>
-<tr>
-<td><code>horizontal-min-[s/m/l]</code></td>
-<td><em>boolean</em></td>
-<td>-</td>
-<td>Use a horizontal instead of the default vertical layout starting at a page width of 768/992/1200px.</td>
+<td>Use a horizontal layout instead of the default vertical layout.</td>
 </tr>
 <tr>
 <td><code>open</code></td>
 <td><em>boolean</em></td>
-<td>-</td>
 <td>Open child drawer elements.</td>
 </tr>
 </tbody>
 </table>
+<h3 id="attributes-on-direct-child-elements">Attributes on direct child-elements</h3>
 <table>
 <thead>
 <tr>
-<th>Attributes on direct child-elements</th>
-<th>Options</th>
-<th>Default</th>
+<th>Attribute</th>
+<th>Type</th>
 <th>Description</th>
 </tr>
 </thead>
@@ -117,61 +115,361 @@
 <tr>
 <td><code>flex</code></td>
 <td><em>boolean</em></td>
-<td>-</td>
-<td>Set flex:1 for this element.</td>
+<td>Set <code>flex: 1</code> for this element.</td>
 </tr>
 <tr>
 <td><code>drawer</code></td>
 <td><em>boolean</em></td>
-<td>-</td>
-<td>use this element as a drawer. drawer can he hidden and shown by setting the <code>show</code> attribute.</td>
-</tr>
-<tr>
-<td><code>drawer-top</code></td>
-<td><em>boolean</em></td>
-<td>-</td>
-<td>use this element as a drawer sliding in from the top. drawer can he hidden and shown by setting the <code>show</code> attribute.</td>
+<td>Use this element as a drawer. Drawers can he hidden and shown by setting the <code>show</code> attribute on the parent <code>&lt;brick-layout&gt;</code>.</td>
 </tr>
 </tbody>
 </table>
-<p>All those attributes can also be set as <code>attr-lt-[s/m/l]</code>, <code>attr-gt-[xs/s/m]</code> and <code>attr-[xs/s/m/l]</code>, for example: <code>drawer-lt-s</code>.
-Attributes declared with <code>attr-lt-[s/m/l]</code> are active up to the specified page width.
-Attribites declared with <code>attr-gt-[xs/s/m]</code> are active above the specified page width.
-Attribites declared with <code>attr-[xs/s/m]</code> are active at the specified page width.</p>
-<p>Attributes on descendent elements | Options     | Default      | Description
-<code>hide</code>                            | <em>boolean</em>   | -            | Set display: none for this element.</p>
-<p>Hide can also be used with the <code>attr-lt-[s/m/l]</code>, <code>attr-gt-[xs/s/m]</code> and <code>attr-[xs/s/m/l]</code> pattern.</p>
+<h3 id="attributes-on-descendent-elements">Attributes on descendent elements</h3>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>hide</code></td>
+<td><em>boolean</em></td>
+<td>Hide this element. </td>
+</tr>
+</tbody>
+</table>
+<h3 id="attributes-and-page-widths">Attributes and page widths</h3>
+<p>All mentioned attributes except <code>open</code> can be set to only apply on certain page widths:</p>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>&lt; 768px (xs)</th>
+<th>≥ 768px (s)</th>
+<th>≥ 992px (m)</th>
+<th>≥ 1200px (l)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>attribute</code></td>
+<td><strong>yes</strong></td>
+<td><strong>yes</strong></td>
+<td><strong>yes</strong></td>
+<td><strong>yes</strong></td>
+</tr>
+<tr>
+<td><code>attribute-xs</code></td>
+<td><strong>yes</strong></td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>attribute-s</code></td>
+<td>no</td>
+<td><strong>yes</strong></td>
+<td>no</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>attribute-m</code></td>
+<td>no</td>
+<td>no</td>
+<td><strong>yes</strong></td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>attribute-l</code></td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+<td><strong>yes</strong></td>
+</tr>
+<tr>
+<td><code>attribute-lt-s</code></td>
+<td><strong>yes</strong></td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>attribute-lt-m</code></td>
+<td><strong>yes</strong></td>
+<td><strong>yes</strong></td>
+<td>no</td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>attribute-lt-l</code></td>
+<td><strong>yes</strong></td>
+<td><strong>yes</strong></td>
+<td><strong>yes</strong></td>
+<td>no</td>
+</tr>
+<tr>
+<td><code>attribute-gt-xs</code></td>
+<td>no</td>
+<td><strong>yes</strong></td>
+<td><strong>yes</strong></td>
+<td><strong>yes</strong></td>
+</tr>
+<tr>
+<td><code>attribute-gt-s</code></td>
+<td>no</td>
+<td>no</td>
+<td><strong>yes</strong></td>
+<td><strong>yes</strong></td>
+</tr>
+<tr>
+<td><code>attribute-gt-m</code></td>
+<td>no</td>
+<td>no</td>
+<td>no</td>
+<td><strong>yes</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Example:</p>
+<p>The attribute <code>hide-gt-xs</code> hides an element when the page-width is greater than 768px.</p>
 <h2 id="methods">Methods</h2>
 <table>
 <thead>
 <tr>
 <th>Method</th>
-<th>Parameters</th>
-<th>Returns</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td><code>toggleDrawer()</code></td>
-<td></td>
-<td></td>
 <td>Toggle the drawer state.</td>
 </tr>
 <tr>
 <td><code>openDrawer()</code></td>
-<td></td>
-<td></td>
 <td>Open the drawer.</td>
 </tr>
 <tr>
 <td><code>closeDrawer()</code></td>
-<td></td>
-<td></td>
-<td>close the drawer.</td>
+<td>Close the drawer.</td>
 </tr>
 </tbody>
 </table>
+<h2 id="examples">Examples</h2>
+<h3 id="basic-examples">Basic Examples</h3>
+<h4 id="simple">Simple</h4>
+<h5 id="description">Description</h5>
+<ul>
+<li>Headerbar on the top of the page.</li>
+<li>Below the Header:<ul>
+<li>Menu on the left side, taking up as much space as the menu items need.</li>
+<li>Content taking up the rest of the space.</li>
+</ul>
+</li>
+</ul>
+<p><a href="http://mozbrick.github.io/examples/brick-layout/simple.html">Demo</a></p>
+<h5 id="code">Code</h5>
+<p>We start with the outmost <code>brick-layout</code> to split the page vertically into the Header and the rest below it. We insert a <code>header</code> and a <code>div</code>.
+To make the header take up as much space as it needs and the rest below we put the attribute <code>flex</code> on the div below the <code>header</code>.</p>
+<pre><code class="lang-html">&lt;brick-layout&gt;
+  &lt;header&gt;
+    Brick-Layout Basic Examples: Simple
+  &lt;/header&gt;
+  &lt;div flex&gt; 
+    &lt;!-- menu and content will go here --&gt;
+  &lt;/div&gt;
+&lt;/brick-layout&gt;</code></pre>
+<p>To add the menu and the content horizontally positioned next to each other, we replace the <code>div</code> with another <code>brick-layout</code> this time with the attribute <code>horizontal</code>. Inside we add a <code>div</code> for the menu and one for the content. We also add the attribute <code>flex</code> to the content-div.</p>
+<pre><code class="lang-html">&lt;brick-layout&gt;
+  &lt;header&gt;
+    Brick-Layout Basic Examples: Simple
+  &lt;/header&gt;
+  &lt;brick-layout horizontal flex&gt;
+    &lt;div id=&quot;menu&quot;&gt;
+      &lt;ul&gt;
+        &lt;li&gt;Menu Item 1&lt;/li&gt;
+        &lt;li&gt;Menu Item 2&lt;/li&gt;
+        &lt;li&gt;Menu Item 3&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+    &lt;div id=&quot;content&quot; flex&gt;
+      Content goes here.
+    &lt;/div&gt;
+  &lt;/brick-layout&gt;
+&lt;/brick-layout&gt;</code></pre>
+<p>To make it all work we need some css. We do not want to have a <code>padding</code> and <code>margin</code> outside of our layout and we want our layout to be able fill the whole page, so we add the following css to the html and body.</p>
+<pre><code class="lang-css">html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}</code></pre>
+<p>To visualize the layout we add some borders:</p>
+<pre><code class="lang-css">header {
+  border-bottom: 1px solid #ccc;
+}
+#menu {
+  border-right: 1px solid #ccc;
+}</code></pre>
+<h4 id="columns">Columns</h4>
+<h5 id="description">Description</h5>
+<ul>
+<li>Split the page equally into 4 columns</li>
+</ul>
+<p><a href="http://mozbrick.github.io/examples/brick-layout/columns.html">Demo</a></p>
+<h5 id="code">Code</h5>
+<pre><code class="lang-html">&lt;brick-layout horizontal&gt;
+  &lt;div class=&quot;column&quot; flex&gt;1&lt;/div&gt;
+  &lt;div class=&quot;column&quot; flex&gt;2&lt;/div&gt;
+  &lt;div class=&quot;column&quot; flex&gt;3&lt;/div&gt;
+  &lt;div class=&quot;column&quot; flex&gt;4&lt;/div&gt;
+&lt;/brick-layout&gt;</code></pre>
+<pre><code class="lang-css">html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+.column {
+  border-left: 1px solid #ccc;
+  text-align: center;
+}
+.columns:first-of-type {
+  border: none;
+}</code></pre>
+<h3 id="responsive-examples">Responsive Examples</h3>
+<h4 id="drawer">Drawer</h4>
+<h5 id="description">Description</h5>
+<ul>
+<li>Headerbar on the top of the page.</li>
+<li>Below the Header:<ul>
+<li>Menu on the left side, turns into a drawer when the page-width is below 768px.</li>
+<li>Menu-Button to control the Menu when the page-width is below 768px.</li>
+<li>Content taking up the rest of the space.</li>
+</ul>
+</li>
+</ul>
+<p><a href="http://mozbrick.github.io/examples/brick-layout/drawer.html">Demo</a></p>
+<h5 id="code">Code</h5>
+<pre><code class="lang-html">&lt;brick-layout&gt;
+  &lt;header&gt;
+    &lt;brick-action target=&quot;main&quot; action=&quot;toggleDrawer&quot;&gt;
+      &lt;button hide-gt-xs&gt;M&lt;/button&gt;
+    &lt;/brick-action&gt;
+    Brick Layout Example: Simple responsive Drawer
+  &lt;/header&gt;
+  &lt;brick-layout horizontal id=&quot;main&quot; flex&gt;
+    &lt;brick-menu id=&quot;menu&quot; drawer-lt-s&gt;
+      &lt;brick-menu-item selected&gt;Menu Item 1&lt;/brick-menu-item&gt;
+      &lt;brick-menu-item&gt;Menu Item 2&lt;/brick-menu-item&gt;
+      &lt;brick-menu-item&gt;Menu Item 3&lt;/brick-menu-item&gt;
+    &lt;/brick-menu&gt;
+    &lt;div id=&quot;article&quot; flex&gt;
+      article
+    &lt;/div&gt;
+  &lt;/brick-layout&gt;
+&lt;/brick-layout&gt;</code></pre>
+<pre><code class="lang-css">html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+#header {
+  border-bottom: 1px solid #ccc;
+  padding: 12px 9px 9px 9px;
+}
+#menu {
+  border-right: 1px solid #ccc;
+  padding: 9px;
+  background: white;
+}
+#menu brick-menu-item {
+  padding: 3px 0;
+}
+#menu brick-menu-item[selected] {
+  font-weight: bold;
+}
+#article {
+  padding: 9px;
+}</code></pre>
+<h4 id="tabs">Tabs</h4>
+<ul>
+<li>Headerbar on the top of the page.</li>
+<li>Below the Header:<ul>
+<li>Menu on the left side, turns into a tabbar at the bottom of the page when the page-width is below 768px.</li>
+<li>Content taking up the rest of the space.</li>
+</ul>
+</li>
+</ul>
+<h5 id="description">Description</h5>
+<p><a href="http://mozbrick.github.io/examples/brick-layout/tabs.html">Demo</a></p>
+<h5 id="code">Code</h5>
+<pre><code class="lang-`html">&lt;brick-layout&gt;
+  &lt;header&gt;
+    Brick Layout Example: Responsive Tabs
+  &lt;/header&gt;
+  &lt;brick-layout horizontal-gt-xs flex&gt;
+    &lt;brick-menu id=&quot;menu&quot; horizontal-lt-s&gt;
+      &lt;brick-action selected target=&quot;card1&quot; action=&quot;reveal&quot;&gt;
+        Menu Item 1
+      &lt;/brick-action&gt;
+      &lt;brick-action target=&quot;card2&quot; action=&quot;reveal&quot;&gt;
+        Menu Item 2
+      &lt;/brick-action&gt;
+      &lt;brick-action target=&quot;card3&quot; action=&quot;reveal&quot;&gt;
+        Menu Item 3
+      &lt;/brick-action&gt;
+    &lt;/brick-menu&gt;
+    &lt;brick-deck id=&quot;content&quot; flex selected-index=&quot;0&quot;&gt;
+      &lt;brick-card id=&quot;card1&quot; selected&gt;1&lt;/brick-card&gt;
+      &lt;brick-card id=&quot;card2&quot;&gt;2&lt;/brick-card&gt;
+      &lt;brick-card id=&quot;card3&quot;&gt;3&lt;/brick-card&gt;
+    &lt;/brick-deck&gt;
+  &lt;/brick-layout&gt;
+&lt;/brick-layout&gt;</code></pre>
+<pre><code class="lang-css">html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+  box-sizing: border-box;
+}
+#header {
+  border-bottom: 1px solid #ccc;
+  padding: 12px 9px 9px 9px;
+}
+#menu {
+  border-right: 1px solid #ccc;
+  background: white;
+}
+#menu &gt; * {
+  padding: 9px;
+  width: 100%;
+}
+#menu [selected] {
+  font-weight: bold;
+}
+brick-card {
+  padding: 9px;
+  font-size: 6em;
+  text-align: center;
+}
+@media (max-width: 768px) {
+  #content {
+    order: 1;
+  }
+  #menu {
+    border: none;
+    border-top: 1px solid #ccc;
+    order: 2;
+  }
+  #menu &gt; * {
+    border-left: 1px solid #ccc;
+  }
+  #menu &gt; *:first-child {
+    border-left: none;
+  }
+}</code></pre>
 <h2 id="development">Development</h2>
 <p>Brick components use <a href="http://learnboost.github.com/stylus/">Stylus</a> to generate their CSS.</p>
 <p>This repository comes outfitted with a set of tools to ease the development process.</p>

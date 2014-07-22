@@ -32,7 +32,7 @@ It listens to an event on a source elemenet and then calls a method on a target 
 Attribute     | Options     | Default      | Description
 ---           | ---         | ---          | ---
 `target`      | *string*    |              | ID of the target element.
-`source`      | *string*    |              | ID of the source element.
+`source`      | *string*    | the element itself | ID of the source element. If not provided, the `brick-action` element will listen to events on itself. So you can wrap the source element inside `brick-action`
 `trigger`     | *string*    |              | Name of the event to listen for on the soure element.
 `action`      | *string*    | `click`      | Name of the method to call on the target element.
 

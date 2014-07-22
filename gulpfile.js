@@ -9,15 +9,40 @@ var rename = require('gulp-rename');
 var sort = require('sort-stream');
 
 var paths = {
-  'docs': 'docs/*.md',
-  'pages': './*.md',
   'blog': 'blog/*.md',
+  'componentsDir': './bower_components/',
+  'docs': 'docs/*.md',
+  'docsDir': './docs/',
+  'pages': './*.md',
   'site': ['header.html', 'footer.html']
 };
 
+gulp.task('copydocs', function() {
+  var readmes = [];
+  var files = fs.readdirSync(paths.componentsDir);
+  for (var i = 0; i < files.length; i++) {
+    if (files[i][0] !== '.' && files[i].substring(0,6) === 'brick-') {
+      var path = paths.componentsDir + files[i];
+      var stat = fs.statSync(path);
+      if (stat.isDirectory) {
+        if (fs.existsSync(path + '/readme.md')) {
+          readmes.push(path + '/readme.md');
+        }
+      }
+    }
+  }
+  return gulp.src(readmes, {'base': paths.componentsDir})
+    .pipe(rename(function (path){
+      var name = path.dirname;
+      path.dirname = '.';
+      path.basename = name;
+    }))
+    .pipe(gulp.dest(paths.docsDir));
+});
+
 gulp.task('build', ['docs', 'pages', 'blog']);
 
-gulp.task('docs', function () {
+gulp.task('docs', ['copydocs'], function () {
   var content = {
     footer: fs.readFileSync('footer.html'),
     header: fs.readFileSync('header.html')

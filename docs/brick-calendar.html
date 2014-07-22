@@ -30,9 +30,14 @@
             <li><div>Components</div>
               <ul>
                 <li><a is="route-link" href="/docs/brick-action.html">brick-action</a></li>
+                <li><a is="route-link" href="/docs/brick-appbar.html">brick-appbar</a></li>
+                <li><a is="route-link" href="/docs/brick-calendar.html">brick-calendar</a></li>
                 <li><a is="route-link" href="/docs/brick-deck.html">brick-deck</a></li>
                 <li><a is="route-link" href="/docs/brick-flipbox.html">brick-flipbox</a></li>
+                <li><a is="route-link" href="/docs/brick-form.html">brick-form</a></li>
                 <li><a is="route-link" href="/docs/brick-layout.html">brick-layout</a></li>
+                <li><a is="route-link" href="/docs/brick-menu.html">brick-menu</a></li>
+                <li><a is="route-link" href="/docs/brick-storage-indexeddb.html">brick-storage-indexeddb</a></li>
                 <li><a is="route-link" href="/docs/brick-tabbar.html">brick-tabbar</a></li>
               </ul>
             </li>
@@ -55,6 +60,97 @@
         <brick-action trigger="click" target="main" action="toggleDrawer">
           <button class="menu" hide-gt-s><i class="fa fa-bars"></i></button>
         </brick-action>
+<h1 id="brick-calendar">brick-calendar</h1>
+<blockquote>
+<p>A <a href="https://github.com/mozbrick/brick/">Brick</a> custom element starter-kit.</p>
+</blockquote>
+<h2 id="demo">Demo</h2>
+<p><a href="http://mozbrick.github.io/brick-calendar">Check it live!</a></p>
+<h2 id="usage">Usage</h2>
+<ol>
+<li><p>Import Web Components polyfill:</p>
+<pre><code class="lang-html"> &lt;script src=&quot;bower_components/platform/platform.js&quot;&gt;&lt;/script&gt;</code></pre>
+</li>
+<li><p>Import Custom Element:</p>
+<pre><code class="lang-html"> &lt;link rel=&quot;import&quot; href=&quot;src/element.html&quot;&gt;</code></pre>
+</li>
+<li><p>Start using it:</p>
+<pre><code class="lang-html"> &lt;brick-calendar&gt;&lt;/brick-calendar&gt;</code></pre>
+</li>
+</ol>
+<h2 id="options">Options</h2>
+<table>
+<thead>
+<tr>
+<th>Attribute</th>
+<th>Options</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>foo</code></td>
+<td><em>string</em></td>
+<td><code>bar</code></td>
+<td>An Attribute.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="methods">Methods</h2>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Parameters</th>
+<th>Returns</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>method()</code></td>
+<td>None.</td>
+<td>Nothing.</td>
+<td>A method.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="events">Events</h2>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>onsomething</code></td>
+<td>Triggers when something happens.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="development">Development</h2>
+<p>Brick components use <a href="http://learnboost.github.com/stylus/">Stylus</a> to generate their CSS.</p>
+<p>This repository comes outfitted with a set of tools to ease the development process.</p>
+<p>To get started:</p>
+<ul>
+<li><p>Install <a href="http://bower.io/">Bower</a> &amp; <a href="http://gulpjs.com/">Gulp</a>:</p>
+<pre><code class="lang-sh">  $ npm install -g bower gulp</code></pre>
+</li>
+<li><p>Install local dependencies:</p>
+<pre><code class="lang-sh">  $ npm install &amp;&amp; bower install</code></pre>
+</li>
+</ul>
+<p>While developing your component, there is a development server that will watch your files for changes and automatically re-build your styles and re-lint your code.</p>
+<p>To run the development server:</p>
+<ul>
+<li>Run <code>gulp server</code></li>
+<li>Navigate to <code>http://localhost:3001</code></li>
+</ul>
+<p>To simply build and lint your code, run <code>gulp build</code>.</p>
+<p>You can also push your code to GitHub Pages by running <code>gulp deploy</code>.</p>
 
       </article>
     </brick-layout>

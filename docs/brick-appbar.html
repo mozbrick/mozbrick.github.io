@@ -60,114 +60,44 @@
         <brick-action trigger="click" target="main" action="toggleDrawer">
           <button class="menu" hide-gt-s><i class="fa fa-bars"></i></button>
         </brick-action>
-<h1 id="brick-deck">brick-deck</h1>
-<p>A <a href="https://github.com/mozbrick/brick/">Brick</a> box element in which cards can be cycled independently of order with a variety of different transitions.</p>
+<h1 id="brick-appbar">brick-appbar</h1>
+<blockquote>
+<p>A <a href="https://github.com/mozbrick/brick/">Brick</a> component providing a header bar.</p>
+</blockquote>
 <h2 id="demo">Demo</h2>
-<p><a href="http://mozbrick.github.io/brick-deck">Check it live!</a></p>
+<p><a href="http://mozbrick.github.io/brick-appbar">Check it live!</a></p>
 <h2 id="usage">Usage</h2>
 <ol>
 <li><p>Import Web Components polyfill:</p>
 <pre><code class="lang-html"> &lt;script src=&quot;bower_components/platform/platform.js&quot;&gt;&lt;/script&gt;</code></pre>
 </li>
 <li><p>Import Custom Element:</p>
-<pre><code class="lang-html"> &lt;link rel=&quot;import&quot; href=&quot;src/element.html&quot;&gt;</code></pre>
+<pre><code class="lang-html"> &lt;link rel=&quot;import&quot; href=&quot;src/brick-appbar.html&quot;&gt;</code></pre>
 </li>
 <li><p>Start using it:</p>
-<pre><code class="lang-html"> &lt;brick-deck selected-index=&quot;0&quot;&gt;
-   &lt;brick-card selected&gt;0&lt;/brick-card&gt;
-   &lt;brick-card&gt;1&lt;/brick-card&gt;
-   &lt;brick-card&gt;2&lt;/brick-card&gt;
-   &lt;brick-card&gt;3&lt;/brick-card&gt;
-   &lt;brick-card&gt;4&lt;/brick-card&gt;
- &lt;/brick-deck&gt;</code></pre>
+<p> You can use any elements in place of the <code>&lt;button&gt;</code> tags in the example below. A heading <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> element is required, and will be created automatically if not provided.</p>
+<pre><code class="lang-html"> &lt;brick-appbar&gt;
+   &lt;button&gt;=&lt;/button&gt;
+   &lt;h2&gt;Email&lt;/h2&gt;
+   &lt;button&gt;+&lt;/button&gt;
+   &lt;button&gt;?&lt;/button&gt;
+ &lt;/brick-appbar&gt;</code></pre>
 </li>
 </ol>
 <h2 id="options">Options</h2>
 <table>
-  <tr>
-    <th>Attribute</th>
-    <th>Options</th>
-    <th>Default</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td><code>transition-type</code></td>
-    <td>
-      <i>string</i>
-      <ul>
-        <li><code>slide-left</code></li>
-        <li><code>slide-right</li>
-        <li><code>slide-up</code></li>
-        <li><code>slide-down</code></li>
-      </ul>
-    </td>
-    <td>-</td>
-    <td>
-      Defines the type of animation to use for cycling between cards.
-      The default is no transition animation.
-      <br>
-      This property can either be set as an HTML attribute under the name <code>transition-type</code>,
-      or programmatically with the property <code>transitionType</code> <code>selected-index</code>.
-    </td>
-  </tr>
-  <tr>
-    <td><code>selected-index</code></td>
-    <td>
-      <i>number</i>
-    </td>
-    <td>-</td>
-    <td>
-      Gets/sets the index of the currently selected card in the deck.
-      <br>
-      Can either be set as an HTML attribute under the name selected-index or programmatically with the property selectedIndex.
-    </td>
-  </tr>
-  <tr>
-    <td><code>loop</code></td>
-    <td>
-      <i>boolean</i>
-    </td>
-    <td>-</td>
-    <td>
-      Toggle allowance of looping when calling nextCard and previousCard methods has reached the end of either side of the index.
-    </td>
-  </tr>
-</table>
-
-<h2 id="accessors">Accessors</h2>
-<table>
 <thead>
 <tr>
-<th>Poperty</th>
-<th>Type</th>
+<th>Attribute</th>
+<th>Options</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>transitionType</code></td>
+<td><code>heading</code></td>
 <td><em>string</em></td>
-<td>corresponds to the <code>transition-type</code> attribute</td>
-</tr>
-<tr>
-<td><code>selectedIndex</code></td>
-<td><em>string</em></td>
-<td>corresponds to the <code>selected-index</code> attribute</td>
-</tr>
-<tr>
-<td><code>loop</code></td>
-<td><em>boolean</em></td>
-<td>corresponds to the <code>loop</code> attribute</td>
-</tr>
-<tr>
-<td><code>cards</code> (getter only)</td>
-<td><em>array</em></td>
-<td>array of all the brick-card elements contained in an brick-deck</td>
-</tr>
-<tr>
-<td><code>selectedCard</code> (getter only)</td>
-<td><em>brick-card</em></td>
-<td>the brick-card DOM element that is currently displayed by the deck. Returns null if no such card exists.</td>
+<td>Edits the header text.</td>
 </tr>
 </tbody>
 </table>
@@ -175,50 +105,14 @@
 <table>
 <thead>
 <tr>
-<th>Method</th>
-<th>Returns</th>
+<th>Accessor</th>
 <th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><code>showCard(index / element, [direction])</code></td>
-<td>-</td>
-<td>Transitions to the brick-card at the given index within the deck. If given a direction of &#39;forward&#39;, will perform the forwards/normal version of the current transition animation. If given &#39;reverse&#39;, will performs the reverse animation. If the direction is omitted, the deck will perform a forward animation.</td>
-</tr>
-<tr>
-<td><code>hideCard(index / element)</code></td>
-<td>-</td>
-<td>Hides the card element or card located at a specified index.</td>
-</tr>
-<tr>
-<td><code>nextCard([direction])</code></td>
-<td>-</td>
-<td>Transitions to the next card in the deck, looping back to the start if needed.</td>
-</tr>
-<tr>
-<td><code>previousCard([direction])</code></td>
-<td>-</td>
-<td>Transitions to the previous card in the deck, looping back to the end if needed.</td>
-</tr>
-</tbody>
-</table>
-<h2 id="events">Events</h2>
-<table>
-<thead>
-<tr>
-<th>Event</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>show</code></td>
-<td>Fired from a card target after it has completed its show animation, and the show state has been finalized.</td>
-</tr>
-<tr>
-<td><code>hide</code></td>
-<td>Fired from a card target after it has completed its hide animation, and the hide state has been finalized.</td>
+<td><code>heading</code></td>
+<td>corresponds to the header text attribute.</td>
 </tr>
 </tbody>
 </table>
@@ -238,7 +132,7 @@
 <p>To run the development server:</p>
 <ul>
 <li>Run <code>gulp server</code></li>
-<li>Navigate to <code>http:localhost:3001</code></li>
+<li>Navigate to <code>http://localhost:3001</code></li>
 </ul>
 <p>To simply build and lint your code, run <code>gulp build</code>.</p>
 <p>You can also push your code to GitHub Pages by running <code>gulp deploy</code>.</p>

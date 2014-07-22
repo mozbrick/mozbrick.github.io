@@ -39,7 +39,7 @@ Attribute     | Options     | Default      | Description
 Property            | Type        | Default      | Description
 ---                 | ---         | ---          | ---
 `target-event`      | *string*    | `reveal`     | Corresponds to the `target-event` attribute.
-`tabs` (getter only)| *array*     | -            | Returns a list of the `<brick-tabbar-tab>` elements in the `<brick-tabbar>`.
+`tabs` (getter only)| *array*     | -            | Returns a list of the `<brick-tabbar-tab>` elements in the `<brick-tabbar>`.  
 
 ## brick-tabbar-tab details
 
