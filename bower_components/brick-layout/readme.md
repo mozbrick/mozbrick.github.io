@@ -264,7 +264,7 @@ html, body {
 
 ##### Code
 
-````html
+```html
 <brick-layout>
   <header>
     Brick Layout Example: Responsive Tabs

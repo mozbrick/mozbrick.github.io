@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="//code.cdn.mozilla.net/fonts/fira.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/media/css/site.css">
+    <link rel="stylesheet" href="/media/css/highlight.css">
   </head>
   <body>
     <brick-layout horizontal class="main" id="main">
@@ -68,19 +69,28 @@
 <h2 id="usage">Usage</h2>
 <ol>
 <li><p>Import Web Components polyfill:</p>
-<pre><code class="lang-html"> &lt;script src=&quot;bower_components/platform/platform.js&quot;&gt;&lt;/script&gt;</code></pre>
+<pre><code class="lang-html"><div class="highlight"><pre> <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;bower_components/platform/platform.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+</code></pre>
 </li>
 <li><p>Import Custom Element:</p>
-<pre><code class="lang-html"> &lt;link rel=&quot;import&quot; href=&quot;src/element.html&quot;&gt;</code></pre>
+<pre><code class="lang-html"><div class="highlight"><pre> <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;import&quot;</span> <span class="na">href=</span><span class="s">&quot;src/element.html&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+
+</code></pre>
 </li>
 <li><p>Start using it:</p>
-<pre><code class="lang-html"> &lt;brick-deck selected-index=&quot;0&quot;&gt;
-   &lt;brick-card selected&gt;0&lt;/brick-card&gt;
-   &lt;brick-card&gt;1&lt;/brick-card&gt;
-   &lt;brick-card&gt;2&lt;/brick-card&gt;
-   &lt;brick-card&gt;3&lt;/brick-card&gt;
-   &lt;brick-card&gt;4&lt;/brick-card&gt;
- &lt;/brick-deck&gt;</code></pre>
+<pre><code class="lang-html"><div class="highlight"><pre> <span class="nt">&lt;brick-deck</span> <span class="na">selected-index=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;brick-card</span> <span class="na">selected</span><span class="nt">&gt;</span>0<span class="nt">&lt;/brick-card&gt;</span>
+   <span class="nt">&lt;brick-card&gt;</span>1<span class="nt">&lt;/brick-card&gt;</span>
+   <span class="nt">&lt;brick-card&gt;</span>2<span class="nt">&lt;/brick-card&gt;</span>
+   <span class="nt">&lt;brick-card&gt;</span>3<span class="nt">&lt;/brick-card&gt;</span>
+   <span class="nt">&lt;brick-card&gt;</span>4<span class="nt">&lt;/brick-card&gt;</span>
+ <span class="nt">&lt;/brick-deck&gt;</span>
+</pre></div>
+
+</code></pre>
 </li>
 </ol>
 <h2 id="options">Options</h2>
@@ -229,10 +239,16 @@
 <p>To get started:</p>
 <ul>
 <li><p>Install <a href="http://bower.io/">Bower</a> &amp; <a href="http://gulpjs.com/">Gulp</a>:</p>
-<pre><code class="lang-sh">  $ npm install -g bower gulp</code></pre>
+<pre><code class="lang-sh"><div class="highlight"><pre>  <span class="nv">$ </span>npm install -g bower gulp
+</pre></div>
+
+</code></pre>
 </li>
 <li><p>Install local dependencies:</p>
-<pre><code class="lang-sh">  $ npm install &amp;&amp; bower install</code></pre>
+<pre><code class="lang-sh"><div class="highlight"><pre>  <span class="nv">$ </span>npm install <span class="o">&amp;&amp;</span> bower install
+</pre></div>
+
+</code></pre>
 </li>
 </ul>
 <p>While developing your component, there is a development server that will watch your files for changes and automatically re-build your styles and re-lint your code.</p>

@@ -4,9 +4,10 @@ var footer = require('gulp-footer');
 var fs = require('fs');
 var gulp = require('gulp');
 var header = require('gulp-header');
-var marked = require('gulp-marked');
+var marked = require('gulp-markdown');
 var rename = require('gulp-rename');
 var sort = require('sort-stream');
+var pygmetize = require('pygmentize-bundled');
 
 var paths = {
   'blog': 'blog/*.md',
@@ -48,7 +49,13 @@ gulp.task('docs', ['copydocs'], function () {
     header: fs.readFileSync('header.html')
   };
   gulp.src(paths.docs)
-    .pipe(marked())
+    .pipe(marked({
+      highlight: function (code, lang, callback) {
+        pygmetize({ lang: lang, format: 'html' }, code, function (err, result) {
+          callback(err, result.toString());
+        });
+      }
+    }))
     .pipe(rename(function (path) {
       path.extname = '.html';
     }))

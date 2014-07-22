@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="//code.cdn.mozilla.net/fonts/fira.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/media/css/site.css">
+    <link rel="stylesheet" href="/media/css/highlight.css">
   </head>
   <body>
     <brick-layout horizontal class="main" id="main">
@@ -70,13 +71,22 @@
 <h2 id="usage">Usage</h2>
 <ol>
 <li><p>Import Web Components polyfill:</p>
-<pre><code class="lang-html"> &lt;script src=&quot;bower_components/platform/platform.js&quot;&gt;&lt;/script&gt;</code></pre>
+<pre><code class="lang-html"><div class="highlight"><pre> <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;bower_components/platform/platform.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+</code></pre>
 </li>
 <li><p>Import Custom Element:</p>
-<pre><code class="lang-html"> &lt;link rel=&quot;import&quot; href=&quot;src/brick-layout.html&quot;&gt;</code></pre>
+<pre><code class="lang-html"><div class="highlight"><pre> <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;import&quot;</span> <span class="na">href=</span><span class="s">&quot;src/brick-layout.html&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+
+</code></pre>
 </li>
 <li><p>Start using it:</p>
-<pre><code class="lang-html"> &lt;brick-layout&gt;&lt;/brick-layout&gt;</code></pre>
+<pre><code class="lang-html"><div class="highlight"><pre> <span class="nt">&lt;brick-layout&gt;&lt;/brick-layout&gt;</span>
+</pre></div>
+
+</code></pre>
 <p> See <a href="#examples">Examples</a> for detailed examples.</p>
 </li>
 </ol>
@@ -275,45 +285,57 @@
 <h5 id="code">Code</h5>
 <p>We start with the outmost <code>brick-layout</code> to split the page vertically into the Header and the rest below it. We insert a <code>header</code> and a <code>div</code>.
 To make the header take up as much space as it needs and the rest below we put the attribute <code>flex</code> on the div below the <code>header</code>.</p>
-<pre><code class="lang-html">&lt;brick-layout&gt;
-  &lt;header&gt;
+<pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;brick-layout&gt;</span>
+  <span class="nt">&lt;header&gt;</span>
     Brick-Layout Basic Examples: Simple
-  &lt;/header&gt;
-  &lt;div flex&gt; 
-    &lt;!-- menu and content will go here --&gt;
-  &lt;/div&gt;
-&lt;/brick-layout&gt;</code></pre>
+  <span class="nt">&lt;/header&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">flex</span><span class="nt">&gt;</span> 
+    <span class="c">&lt;!-- menu and content will go here --&gt;</span>
+  <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/brick-layout&gt;</span>
+</pre></div>
+
+</code></pre>
 <p>To add the menu and the content horizontally positioned next to each other, we replace the <code>div</code> with another <code>brick-layout</code> this time with the attribute <code>horizontal</code>. Inside we add a <code>div</code> for the menu and one for the content. We also add the attribute <code>flex</code> to the content-div.</p>
-<pre><code class="lang-html">&lt;brick-layout&gt;
-  &lt;header&gt;
+<pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;brick-layout&gt;</span>
+  <span class="nt">&lt;header&gt;</span>
     Brick-Layout Basic Examples: Simple
-  &lt;/header&gt;
-  &lt;brick-layout horizontal flex&gt;
-    &lt;div id=&quot;menu&quot;&gt;
-      &lt;ul&gt;
-        &lt;li&gt;Menu Item 1&lt;/li&gt;
-        &lt;li&gt;Menu Item 2&lt;/li&gt;
-        &lt;li&gt;Menu Item 3&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-    &lt;div id=&quot;content&quot; flex&gt;
+  <span class="nt">&lt;/header&gt;</span>
+  <span class="nt">&lt;brick-layout</span> <span class="na">horizontal</span> <span class="na">flex</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;menu&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;ul&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Menu Item 1<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Menu Item 2<span class="nt">&lt;/li&gt;</span>
+        <span class="nt">&lt;li&gt;</span>Menu Item 3<span class="nt">&lt;/li&gt;</span>
+      <span class="nt">&lt;/ul&gt;</span>
+    <span class="nt">&lt;/div&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;content&quot;</span> <span class="na">flex</span><span class="nt">&gt;</span>
       Content goes here.
-    &lt;/div&gt;
-  &lt;/brick-layout&gt;
-&lt;/brick-layout&gt;</code></pre>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/brick-layout&gt;</span>
+<span class="nt">&lt;/brick-layout&gt;</span>
+</pre></div>
+
+</code></pre>
 <p>To make it all work we need some css. We do not want to have a <code>padding</code> and <code>margin</code> outside of our layout and we want our layout to be able fill the whole page, so we add the following css to the html and body.</p>
-<pre><code class="lang-css">html, body {
-  padding: 0;
-  margin: 0;
-  height: 100%;
-}</code></pre>
+<pre><code class="lang-css"><div class="highlight"><pre><span class="nt">html</span><span class="o">,</span> <span class="nt">body</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+</code></pre>
 <p>To visualize the layout we add some borders:</p>
-<pre><code class="lang-css">header {
-  border-bottom: 1px solid #ccc;
-}
-#menu {
-  border-right: 1px solid #ccc;
-}</code></pre>
+<pre><code class="lang-css"><div class="highlight"><pre><span class="nt">header</span> <span class="p">{</span>
+  <span class="k">border-bottom</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#ccc</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">#menu</span> <span class="p">{</span>
+  <span class="k">border-right</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#ccc</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+</code></pre>
 <h4 id="columns">Columns</h4>
 <h5 id="description">Description</h5>
 <ul>
@@ -321,24 +343,30 @@ To make the header take up as much space as it needs and the rest below we put t
 </ul>
 <p><a href="http://mozbrick.github.io/examples/brick-layout/columns.html">Demo</a></p>
 <h5 id="code">Code</h5>
-<pre><code class="lang-html">&lt;brick-layout horizontal&gt;
-  &lt;div class=&quot;column&quot; flex&gt;1&lt;/div&gt;
-  &lt;div class=&quot;column&quot; flex&gt;2&lt;/div&gt;
-  &lt;div class=&quot;column&quot; flex&gt;3&lt;/div&gt;
-  &lt;div class=&quot;column&quot; flex&gt;4&lt;/div&gt;
-&lt;/brick-layout&gt;</code></pre>
-<pre><code class="lang-css">html, body {
-  padding: 0;
-  margin: 0;
-  height: 100%;
-}
-.column {
-  border-left: 1px solid #ccc;
-  text-align: center;
-}
-.columns:first-of-type {
-  border: none;
-}</code></pre>
+<pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;brick-layout</span> <span class="na">horizontal</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;column&quot;</span> <span class="na">flex</span><span class="nt">&gt;</span>1<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;column&quot;</span> <span class="na">flex</span><span class="nt">&gt;</span>2<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;column&quot;</span> <span class="na">flex</span><span class="nt">&gt;</span>3<span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;column&quot;</span> <span class="na">flex</span><span class="nt">&gt;</span>4<span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/brick-layout&gt;</span>
+</pre></div>
+
+</code></pre>
+<pre><code class="lang-css"><div class="highlight"><pre><span class="nt">html</span><span class="o">,</span> <span class="nt">body</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.column</span> <span class="p">{</span>
+  <span class="k">border-left</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#ccc</span><span class="p">;</span>
+  <span class="k">text-align</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nc">.columns</span><span class="nd">:first-of-type</span> <span class="p">{</span>
+  <span class="k">border</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+</code></pre>
 <h3 id="responsive-examples">Responsive Examples</h3>
 <h4 id="drawer">Drawer</h4>
 <h5 id="description">Description</h5>
@@ -353,47 +381,53 @@ To make the header take up as much space as it needs and the rest below we put t
 </ul>
 <p><a href="http://mozbrick.github.io/examples/brick-layout/drawer.html">Demo</a></p>
 <h5 id="code">Code</h5>
-<pre><code class="lang-html">&lt;brick-layout&gt;
-  &lt;header&gt;
-    &lt;brick-action target=&quot;main&quot; action=&quot;toggleDrawer&quot;&gt;
-      &lt;button hide-gt-xs&gt;M&lt;/button&gt;
-    &lt;/brick-action&gt;
+<pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;brick-layout&gt;</span>
+  <span class="nt">&lt;header&gt;</span>
+    <span class="nt">&lt;brick-action</span> <span class="na">target=</span><span class="s">&quot;main&quot;</span> <span class="na">action=</span><span class="s">&quot;toggleDrawer&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;button</span> <span class="na">hide-gt-xs</span><span class="nt">&gt;</span>M<span class="nt">&lt;/button&gt;</span>
+    <span class="nt">&lt;/brick-action&gt;</span>
     Brick Layout Example: Simple responsive Drawer
-  &lt;/header&gt;
-  &lt;brick-layout horizontal id=&quot;main&quot; flex&gt;
-    &lt;brick-menu id=&quot;menu&quot; drawer-lt-s&gt;
-      &lt;brick-menu-item selected&gt;Menu Item 1&lt;/brick-menu-item&gt;
-      &lt;brick-menu-item&gt;Menu Item 2&lt;/brick-menu-item&gt;
-      &lt;brick-menu-item&gt;Menu Item 3&lt;/brick-menu-item&gt;
-    &lt;/brick-menu&gt;
-    &lt;div id=&quot;article&quot; flex&gt;
+  <span class="nt">&lt;/header&gt;</span>
+  <span class="nt">&lt;brick-layout</span> <span class="na">horizontal</span> <span class="na">id=</span><span class="s">&quot;main&quot;</span> <span class="na">flex</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;brick-menu</span> <span class="na">id=</span><span class="s">&quot;menu&quot;</span> <span class="na">drawer-lt-s</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;brick-menu-item</span> <span class="na">selected</span><span class="nt">&gt;</span>Menu Item 1<span class="nt">&lt;/brick-menu-item&gt;</span>
+      <span class="nt">&lt;brick-menu-item&gt;</span>Menu Item 2<span class="nt">&lt;/brick-menu-item&gt;</span>
+      <span class="nt">&lt;brick-menu-item&gt;</span>Menu Item 3<span class="nt">&lt;/brick-menu-item&gt;</span>
+    <span class="nt">&lt;/brick-menu&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">&quot;article&quot;</span> <span class="na">flex</span><span class="nt">&gt;</span>
       article
-    &lt;/div&gt;
-  &lt;/brick-layout&gt;
-&lt;/brick-layout&gt;</code></pre>
-<pre><code class="lang-css">html, body {
-  padding: 0;
-  margin: 0;
-  height: 100%;
-}
-#header {
-  border-bottom: 1px solid #ccc;
-  padding: 12px 9px 9px 9px;
-}
-#menu {
-  border-right: 1px solid #ccc;
-  padding: 9px;
-  background: white;
-}
-#menu brick-menu-item {
-  padding: 3px 0;
-}
-#menu brick-menu-item[selected] {
-  font-weight: bold;
-}
-#article {
-  padding: 9px;
-}</code></pre>
+    <span class="nt">&lt;/div&gt;</span>
+  <span class="nt">&lt;/brick-layout&gt;</span>
+<span class="nt">&lt;/brick-layout&gt;</span>
+</pre></div>
+
+</code></pre>
+<pre><code class="lang-css"><div class="highlight"><pre><span class="nt">html</span><span class="o">,</span> <span class="nt">body</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">#header</span> <span class="p">{</span>
+  <span class="k">border-bottom</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#ccc</span><span class="p">;</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">12px</span> <span class="m">9px</span> <span class="m">9px</span> <span class="m">9px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">#menu</span> <span class="p">{</span>
+  <span class="k">border-right</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#ccc</span><span class="p">;</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">9px</span><span class="p">;</span>
+  <span class="k">background</span><span class="o">:</span> <span class="nb">white</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">#menu</span> <span class="nt">brick-menu-item</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">3px</span> <span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">#menu</span> <span class="nt">brick-menu-item</span><span class="o">[</span><span class="nt">selected</span><span class="o">]</span> <span class="p">{</span>
+  <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">#article</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">9px</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+
+</code></pre>
 <h4 id="tabs">Tabs</h4>
 <ul>
 <li>Headerbar on the top of the page.</li>
@@ -406,81 +440,93 @@ To make the header take up as much space as it needs and the rest below we put t
 <h5 id="description">Description</h5>
 <p><a href="http://mozbrick.github.io/examples/brick-layout/tabs.html">Demo</a></p>
 <h5 id="code">Code</h5>
-<pre><code class="lang-`html">&lt;brick-layout&gt;
-  &lt;header&gt;
+<pre><code class="lang-html"><div class="highlight"><pre><span class="nt">&lt;brick-layout&gt;</span>
+  <span class="nt">&lt;header&gt;</span>
     Brick Layout Example: Responsive Tabs
-  &lt;/header&gt;
-  &lt;brick-layout horizontal-gt-xs flex&gt;
-    &lt;brick-menu id=&quot;menu&quot; horizontal-lt-s&gt;
-      &lt;brick-action selected target=&quot;card1&quot; action=&quot;reveal&quot;&gt;
+  <span class="nt">&lt;/header&gt;</span>
+  <span class="nt">&lt;brick-layout</span> <span class="na">horizontal-gt-xs</span> <span class="na">flex</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;brick-menu</span> <span class="na">id=</span><span class="s">&quot;menu&quot;</span> <span class="na">horizontal-lt-s</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;brick-action</span> <span class="na">selected</span> <span class="na">target=</span><span class="s">&quot;card1&quot;</span> <span class="na">action=</span><span class="s">&quot;reveal&quot;</span><span class="nt">&gt;</span>
         Menu Item 1
-      &lt;/brick-action&gt;
-      &lt;brick-action target=&quot;card2&quot; action=&quot;reveal&quot;&gt;
+      <span class="nt">&lt;/brick-action&gt;</span>
+      <span class="nt">&lt;brick-action</span> <span class="na">target=</span><span class="s">&quot;card2&quot;</span> <span class="na">action=</span><span class="s">&quot;reveal&quot;</span><span class="nt">&gt;</span>
         Menu Item 2
-      &lt;/brick-action&gt;
-      &lt;brick-action target=&quot;card3&quot; action=&quot;reveal&quot;&gt;
+      <span class="nt">&lt;/brick-action&gt;</span>
+      <span class="nt">&lt;brick-action</span> <span class="na">target=</span><span class="s">&quot;card3&quot;</span> <span class="na">action=</span><span class="s">&quot;reveal&quot;</span><span class="nt">&gt;</span>
         Menu Item 3
-      &lt;/brick-action&gt;
-    &lt;/brick-menu&gt;
-    &lt;brick-deck id=&quot;content&quot; flex selected-index=&quot;0&quot;&gt;
-      &lt;brick-card id=&quot;card1&quot; selected&gt;1&lt;/brick-card&gt;
-      &lt;brick-card id=&quot;card2&quot;&gt;2&lt;/brick-card&gt;
-      &lt;brick-card id=&quot;card3&quot;&gt;3&lt;/brick-card&gt;
-    &lt;/brick-deck&gt;
-  &lt;/brick-layout&gt;
-&lt;/brick-layout&gt;</code></pre>
-<pre><code class="lang-css">html, body {
-  padding: 0;
-  margin: 0;
-  height: 100%;
-  box-sizing: border-box;
-}
-#header {
-  border-bottom: 1px solid #ccc;
-  padding: 12px 9px 9px 9px;
-}
-#menu {
-  border-right: 1px solid #ccc;
-  background: white;
-}
-#menu &gt; * {
-  padding: 9px;
-  width: 100%;
-}
-#menu [selected] {
-  font-weight: bold;
-}
-brick-card {
-  padding: 9px;
-  font-size: 6em;
-  text-align: center;
-}
-@media (max-width: 768px) {
-  #content {
-    order: 1;
-  }
-  #menu {
-    border: none;
-    border-top: 1px solid #ccc;
-    order: 2;
-  }
-  #menu &gt; * {
-    border-left: 1px solid #ccc;
-  }
-  #menu &gt; *:first-child {
-    border-left: none;
-  }
-}</code></pre>
+      <span class="nt">&lt;/brick-action&gt;</span>
+    <span class="nt">&lt;/brick-menu&gt;</span>
+    <span class="nt">&lt;brick-deck</span> <span class="na">id=</span><span class="s">&quot;content&quot;</span> <span class="na">flex</span> <span class="na">selected-index=</span><span class="s">&quot;0&quot;</span><span class="nt">&gt;</span>
+      <span class="nt">&lt;brick-card</span> <span class="na">id=</span><span class="s">&quot;card1&quot;</span> <span class="na">selected</span><span class="nt">&gt;</span>1<span class="nt">&lt;/brick-card&gt;</span>
+      <span class="nt">&lt;brick-card</span> <span class="na">id=</span><span class="s">&quot;card2&quot;</span><span class="nt">&gt;</span>2<span class="nt">&lt;/brick-card&gt;</span>
+      <span class="nt">&lt;brick-card</span> <span class="na">id=</span><span class="s">&quot;card3&quot;</span><span class="nt">&gt;</span>3<span class="nt">&lt;/brick-card&gt;</span>
+    <span class="nt">&lt;/brick-deck&gt;</span>
+  <span class="nt">&lt;/brick-layout&gt;</span>
+<span class="nt">&lt;/brick-layout&gt;</span>
+</pre></div>
+
+</code></pre>
+<pre><code class="lang-css"><div class="highlight"><pre><span class="nt">html</span><span class="o">,</span> <span class="nt">body</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+  <span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">#header</span> <span class="p">{</span>
+  <span class="k">border-bottom</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#ccc</span><span class="p">;</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">12px</span> <span class="m">9px</span> <span class="m">9px</span> <span class="m">9px</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">#menu</span> <span class="p">{</span>
+  <span class="k">border-right</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#ccc</span><span class="p">;</span>
+  <span class="k">background</span><span class="o">:</span> <span class="nb">white</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">#menu</span> <span class="o">&gt;</span> <span class="o">*</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">9px</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nf">#menu</span> <span class="o">[</span><span class="nt">selected</span><span class="o">]</span> <span class="p">{</span>
+  <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="nt">brick-card</span> <span class="p">{</span>
+  <span class="k">padding</span><span class="o">:</span> <span class="m">9px</span><span class="p">;</span>
+  <span class="k">font-size</span><span class="o">:</span> <span class="m">6em</span><span class="p">;</span>
+  <span class="k">text-align</span><span class="o">:</span> <span class="k">center</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">@media</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">768px</span><span class="o">)</span> <span class="p">{</span>
+  <span class="nf">#content</span> <span class="p">{</span>
+    <span class="n">order</span><span class="o">:</span> <span class="m">1</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nf">#menu</span> <span class="p">{</span>
+    <span class="k">border</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+    <span class="k">border-top</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#ccc</span><span class="p">;</span>
+    <span class="n">order</span><span class="o">:</span> <span class="m">2</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nf">#menu</span> <span class="o">&gt;</span> <span class="o">*</span> <span class="p">{</span>
+    <span class="k">border-left</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#ccc</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="nf">#menu</span> <span class="o">&gt;</span> <span class="o">*</span><span class="nd">:first-child</span> <span class="p">{</span>
+    <span class="k">border-left</span><span class="o">:</span> <span class="k">none</span><span class="p">;</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+
+</code></pre>
 <h2 id="development">Development</h2>
 <p>Brick components use <a href="http://learnboost.github.com/stylus/">Stylus</a> to generate their CSS.</p>
 <p>This repository comes outfitted with a set of tools to ease the development process.</p>
 <p>To get started:</p>
 <ul>
 <li><p>Install <a href="http://bower.io/">Bower</a> &amp; <a href="http://gulpjs.com/">Gulp</a>:</p>
-<pre><code class="lang-sh">  $ npm install -g bower gulp</code></pre>
+<pre><code class="lang-sh"><div class="highlight"><pre>  <span class="nv">$ </span>npm install -g bower gulp
+</pre></div>
+
+</code></pre>
 </li>
 <li><p>Install local dependencies:</p>
-<pre><code class="lang-sh">  $ npm install &amp;&amp; bower install</code></pre>
+<pre><code class="lang-sh"><div class="highlight"><pre>  <span class="nv">$ </span>npm install <span class="o">&amp;&amp;</span> bower install
+</pre></div>
+
+</code></pre>
 </li>
 </ul>
 <p>While developing your component, there is a development server that will watch your files for changes and automatically re-build your styles and re-lint your code.</p>
