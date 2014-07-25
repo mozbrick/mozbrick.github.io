@@ -70,7 +70,13 @@ gulp.task('pages', function () {
     header: fs.readFileSync('header.html')
   };
   gulp.src(paths.pages)
-    .pipe(marked())
+    .pipe(marked({
+      highlight: function (code, lang, callback) {
+        pygmetize({ lang: lang, format: 'html' }, code, function (err, result) {
+          callback(err, result.toString());
+        });
+      }
+    }))
     .pipe(rename(function (path) {
       path.extname = '.html';
     }))
@@ -89,7 +95,13 @@ gulp.task('blog', function () {
     .pipe(sort(function (a, b) {
       return a.path < b.path;
     }))
-    .pipe(marked())
+    .pipe(marked({
+      highlight: function (code, lang, callback) {
+        pygmetize({ lang: lang, format: 'html' }, code, function (err, result) {
+          callback(err, result.toString());
+        });
+      }
+    }))
     .pipe(rename(function (path) {
       path.extname = '.html';
     }))
@@ -101,7 +113,13 @@ gulp.task('blog', function () {
     .pipe(gulp.dest('blog'));
 
   gulp.src(paths.blog)
-    .pipe(marked())
+    .pipe(marked({
+      highlight: function (code, lang, callback) {
+        pygmetize({ lang: lang, format: 'html' }, code, function (err, result) {
+          callback(err, result.toString());
+        });
+      }
+    }))
     .pipe(rename(function (path) {
       path.extname = '.html';
     }))
