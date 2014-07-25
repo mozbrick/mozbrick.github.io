@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="//code.cdn.mozilla.net/fonts/fira.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/media/css/site.css">
+    <link rel="stylesheet" href="/media/css/highlight.css">
   </head>
-  <body>
-    <brick-layout horizontal class="main" id="main">
+  <body >
+    <brick-layout horizontal class="main" id="main" unresolved>
       <header drawer-lt-s>
         <a class="logo" href="/index.html"><h1>Brick</h1></a>
         <nav>
@@ -29,15 +30,15 @@
             <!-- <li><a is="route-link" href="/docs/usage.html">Usage</a></li> -->
             <li><div>Components</div>
               <ul>
-                <li><a is="route-link" href="/docs/brick-action.html">brick-action</a></li>
-                <li><a is="route-link" href="/docs/brick-appbar.html">brick-appbar</a></li>
-                <li><a is="route-link" href="/docs/brick-calendar.html">brick-calendar</a></li>
-                <li><a is="route-link" href="/docs/brick-deck.html">brick-deck</a></li>
-                <li><a is="route-link" href="/docs/brick-flipbox.html">brick-flipbox</a></li>
-                <li><a is="route-link" href="/docs/brick-form.html">brick-form</a></li>
-                <li><a is="route-link" href="/docs/brick-layout.html">brick-layout</a></li>
-                <li><a is="route-link" href="/docs/brick-menu.html">brick-menu</a></li>
-                <li><a is="route-link" href="/docs/brick-tabbar.html">brick-tabbar</a>
+                <li><a is="route-link" href="/docs/brick-action.html">action</a></li>
+                <li><a is="route-link" href="/docs/brick-appbar.html">appbar</a></li>
+                <li><a is="route-link" href="/docs/brick-calendar.html">calendar</a></li>
+                <li><a is="route-link" href="/docs/brick-deck.html">deck</a></li>
+                <li><a is="route-link" href="/docs/brick-flipbox.html">flipbox</a></li>
+                <li><a is="route-link" href="/docs/brick-form.html">form</a></li>
+                <li><a is="route-link" href="/docs/brick-layout.html">layout</a></li>
+                <li><a is="route-link" href="/docs/brick-menu.html">menu</a></li>
+                <li><a is="route-link" href="/docs/brick-tabbar.html">tabbar</a>
                 </li>
                 <li><a is="route-link" href="/docs/brick-storage-indexeddb.html">storage-indexeddb</a></li>
               </ul>
@@ -67,13 +68,22 @@
 <h2 id="usage">Usage</h2>
 <ol>
 <li><p>Import Web Components polyfill:</p>
-<pre><code class="lang-html"> &lt;script src=&quot;bower_components/platform/platform.js&quot;&gt;&lt;/script&gt;</code></pre>
+<pre><code class="lang-html"><div class="highlight"><pre> <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;bower_components/platform/platform.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+</code></pre>
 </li>
 <li><p>Import Custom Element:</p>
-<pre><code class="lang-html"> &lt;link rel=&quot;import&quot; href=&quot;src/brick-storage-indexeddb.html&quot;&gt;</code></pre>
+<pre><code class="lang-html"><div class="highlight"><pre> <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;import&quot;</span> <span class="na">href=</span><span class="s">&quot;src/brick-storage-indexeddb.html&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+
+</code></pre>
 </li>
 <li><p>Start using it:</p>
-<pre><code class="lang-html"> &lt;brick-storage-indexeddb&gt;&lt;/brick-storage-indexeddb&gt;</code></pre>
+<pre><code class="lang-html"><div class="highlight"><pre> <span class="nt">&lt;brick-storage-indexeddb&gt;&lt;/brick-storage-indexeddb&gt;</span>
+</pre></div>
+
+</code></pre>
 </li>
 </ol>
 <h2 id="options">Options</h2>
@@ -163,19 +173,34 @@
 <p>In order to run it locally you&#39;ll need to fetch some dependencies and a basic server setup.</p>
 <ul>
 <li><p>Install <a href="http://bower.io/">Bower</a> &amp; <a href="http://gulpjs.com/">Gulp</a>:</p>
-<pre><code class="lang-sh">  $ npm install -g bower gulp</code></pre>
+<pre><code class="lang-sh"><div class="highlight"><pre>  <span class="nv">$ </span>npm install -g bower gulp
+</pre></div>
+
+</code></pre>
 </li>
 <li><p>Install local dependencies:</p>
-<pre><code class="lang-sh">  $ bower install &amp;&amp; npm install</code></pre>
+<pre><code class="lang-sh"><div class="highlight"><pre>  <span class="nv">$ </span>bower install <span class="o">&amp;&amp;</span> npm install
+</pre></div>
+
+</code></pre>
 </li>
 <li><p>To test the project, start the development server and open <code>http://localhost:3001</code>.</p>
-<pre><code class="lang-sh">  $ gulp server</code></pre>
+<pre><code class="lang-sh"><div class="highlight"><pre>  <span class="nv">$ </span>gulp server
+</pre></div>
+
+</code></pre>
 </li>
 <li><p>To build the css and lint the scripts.</p>
-<pre><code class="lang-sh">  $ gulp build</code></pre>
+<pre><code class="lang-sh"><div class="highlight"><pre>  <span class="nv">$ </span>gulp build
+</pre></div>
+
+</code></pre>
 </li>
 <li><p>To provide a live demo, send everything to <code>gh-pages</code> branch.</p>
-<pre><code class="lang-sh">  $ gulp deploy</code></pre>
+<pre><code class="lang-sh"><div class="highlight"><pre>  <span class="nv">$ </span>gulp deploy
+</pre></div>
+
+</code></pre>
 </li>
 </ul>
 <h2 id="license">License</h2>

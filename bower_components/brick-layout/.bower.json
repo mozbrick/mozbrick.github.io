@@ -25,11 +25,11 @@
   "devDependencies": {
     "brick-action": "mozbrick/brick-action"
   },
-  "_release": "4ba419af96",
+  "_release": "10d5ab4e71",
   "_resolution": {
     "type": "branch",
     "branch": "master",
-    "commit": "4ba419af96854f177a7753769e26361647c11d2b"
+    "commit": "10d5ab4e714d585b8486907fa118314c31961b56"
   },
   "_source": "git://github.com/mozbrick/brick-layout.git",
   "_target": "*",

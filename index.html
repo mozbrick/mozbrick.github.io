@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="//code.cdn.mozilla.net/fonts/fira.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/media/css/site.css">
+    <link rel="stylesheet" href="/media/css/highlight.css">
   </head>
-  <body>
-    <brick-layout horizontal class="main" id="main">
+  <body >
+    <brick-layout horizontal class="main" id="main" unresolved>
       <header drawer-lt-s>
         <a class="logo" href="/index.html"><h1>Brick</h1></a>
         <nav>
@@ -29,15 +30,15 @@
             <!-- <li><a is="route-link" href="/docs/usage.html">Usage</a></li> -->
             <li><div>Components</div>
               <ul>
-                <li><a is="route-link" href="/docs/brick-action.html">brick-action</a></li>
-                <li><a is="route-link" href="/docs/brick-appbar.html">brick-appbar</a></li>
-                <li><a is="route-link" href="/docs/brick-calendar.html">brick-calendar</a></li>
-                <li><a is="route-link" href="/docs/brick-deck.html">brick-deck</a></li>
-                <li><a is="route-link" href="/docs/brick-flipbox.html">brick-flipbox</a></li>
-                <li><a is="route-link" href="/docs/brick-form.html">brick-form</a></li>
-                <li><a is="route-link" href="/docs/brick-layout.html">brick-layout</a></li>
-                <li><a is="route-link" href="/docs/brick-menu.html">brick-menu</a></li>
-                <li><a is="route-link" href="/docs/brick-tabbar.html">brick-tabbar</a>
+                <li><a is="route-link" href="/docs/brick-action.html">action</a></li>
+                <li><a is="route-link" href="/docs/brick-appbar.html">appbar</a></li>
+                <li><a is="route-link" href="/docs/brick-calendar.html">calendar</a></li>
+                <li><a is="route-link" href="/docs/brick-deck.html">deck</a></li>
+                <li><a is="route-link" href="/docs/brick-flipbox.html">flipbox</a></li>
+                <li><a is="route-link" href="/docs/brick-form.html">form</a></li>
+                <li><a is="route-link" href="/docs/brick-layout.html">layout</a></li>
+                <li><a is="route-link" href="/docs/brick-menu.html">menu</a></li>
+                <li><a is="route-link" href="/docs/brick-tabbar.html">tabbar</a>
                 </li>
                 <li><a is="route-link" href="/docs/brick-storage-indexeddb.html">storage-indexeddb</a></li>
               </ul>
@@ -65,17 +66,20 @@
 <p>Brick is a collection of UI components designed for the easy and quick building of web application UIs. Brick components are built using the Web Components standard to allow developers to describe the UI of their app using the HTML syntax they already know.</p>
 <h2 id="install">Install</h2>
 <p>Brick can be installed using the <a href="http://bower.io">Bower</a> package manager:</p>
-<pre><code class="lang-sh">bower install mozbrick/brick</code></pre>
+<pre><code class="lang-sh">bower install mozbrick/brick
+</code></pre>
 <p>To use Brick in your project, place the following in the <code>&lt;head&gt;</code> of your main HTML:</p>
 <pre><code class="lang-html">&lt;script src=&quot;bower_components/brick/dist/platform/platform.js&quot;&gt;&lt;/script&gt;
-&lt;link rel=&quot;import&quot; href=&quot;bower_components/brick/dist/brick.html&quot;&gt;</code></pre>
+&lt;link rel=&quot;import&quot; href=&quot;bower_components/brick/dist/brick.html&quot;&gt;
+</code></pre>
 <p>If you are already using Polymer, platform.js or a web browser that supports Web Components, you do not need the above <code>&lt;script&gt;</code> tag.</p>
 <h2 id="development">Development</h2>
 <p>Brick (and its components) are developed using tools built in JavaScript running on <a href="http://nodejs.org/download/">node.js</a>.</p>
 <p>The individual components are developed in their own GitHub repositories.</p>
 <p>The <code>mozbrick/brick</code> repository contains the distributions of all the components packaged together as well as tools for building the distributions.</p>
 <p>To work on Brick, you will need the following node tools:</p>
-<pre><code class="lang-bash">npm install -g bower gulp</code></pre>
+<pre><code class="lang-bash">npm install -g bower gulp
+</code></pre>
 <h3 id="building-brick-from-source">Building Brick from source</h3>
 <p>Once you have the prerequisites, you&#39;re ready to clone and build from source.</p>
 <p>Run the following:</p>
@@ -83,7 +87,8 @@
 cd brick
 npm install
 bower install
-gulp build</code></pre>
+gulp build
+</code></pre>
 
       </article>
     </brick-layout>

@@ -9,9 +9,10 @@
     <link rel="stylesheet" href="//code.cdn.mozilla.net/fonts/fira.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="/media/css/site.css">
+    <link rel="stylesheet" href="/media/css/highlight.css">
   </head>
-  <body>
-    <brick-layout horizontal class="main" id="main">
+  <body >
+    <brick-layout horizontal class="main" id="main" unresolved>
       <header drawer-lt-s>
         <a class="logo" href="/index.html"><h1>Brick</h1></a>
         <nav>
@@ -29,15 +30,15 @@
             <!-- <li><a is="route-link" href="/docs/usage.html">Usage</a></li> -->
             <li><div>Components</div>
               <ul>
-                <li><a is="route-link" href="/docs/brick-action.html">brick-action</a></li>
-                <li><a is="route-link" href="/docs/brick-appbar.html">brick-appbar</a></li>
-                <li><a is="route-link" href="/docs/brick-calendar.html">brick-calendar</a></li>
-                <li><a is="route-link" href="/docs/brick-deck.html">brick-deck</a></li>
-                <li><a is="route-link" href="/docs/brick-flipbox.html">brick-flipbox</a></li>
-                <li><a is="route-link" href="/docs/brick-form.html">brick-form</a></li>
-                <li><a is="route-link" href="/docs/brick-layout.html">brick-layout</a></li>
-                <li><a is="route-link" href="/docs/brick-menu.html">brick-menu</a></li>
-                <li><a is="route-link" href="/docs/brick-tabbar.html">brick-tabbar</a>
+                <li><a is="route-link" href="/docs/brick-action.html">action</a></li>
+                <li><a is="route-link" href="/docs/brick-appbar.html">appbar</a></li>
+                <li><a is="route-link" href="/docs/brick-calendar.html">calendar</a></li>
+                <li><a is="route-link" href="/docs/brick-deck.html">deck</a></li>
+                <li><a is="route-link" href="/docs/brick-flipbox.html">flipbox</a></li>
+                <li><a is="route-link" href="/docs/brick-form.html">form</a></li>
+                <li><a is="route-link" href="/docs/brick-layout.html">layout</a></li>
+                <li><a is="route-link" href="/docs/brick-menu.html">menu</a></li>
+                <li><a is="route-link" href="/docs/brick-tabbar.html">tabbar</a>
                 </li>
                 <li><a is="route-link" href="/docs/brick-storage-indexeddb.html">storage-indexeddb</a></li>
               </ul>
@@ -70,19 +71,28 @@
 <h2 id="usage">Usage</h2>
 <ol>
 <li><p>Import Web Components polyfill:</p>
-<pre><code class="lang-html"> &lt;script src=&quot;bower_components/platform/platform.js&quot;&gt;&lt;/script&gt;</code></pre>
+<pre><code class="lang-html"><div class="highlight"><pre> <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;bower_components/platform/platform.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+</pre></div>
+
+</code></pre>
 </li>
 <li><p>Import Custom Element:</p>
-<pre><code class="lang-html"> &lt;link rel=&quot;import&quot; href=&quot;src/brick-appbar.html&quot;&gt;</code></pre>
+<pre><code class="lang-html"><div class="highlight"><pre> <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">&quot;import&quot;</span> <span class="na">href=</span><span class="s">&quot;src/brick-appbar.html&quot;</span><span class="nt">&gt;</span>
+</pre></div>
+
+</code></pre>
 </li>
 <li><p>Start using it:</p>
 <p> You can use any elements in place of the <code>&lt;button&gt;</code> tags in the example below. A heading <code>&lt;h1&gt;</code> to <code>&lt;h6&gt;</code> element is required, and will be created automatically if not provided.</p>
-<pre><code class="lang-html"> &lt;brick-appbar&gt;
-   &lt;button&gt;=&lt;/button&gt;
-   &lt;h2&gt;Email&lt;/h2&gt;
-   &lt;button&gt;+&lt;/button&gt;
-   &lt;button&gt;?&lt;/button&gt;
- &lt;/brick-appbar&gt;</code></pre>
+<pre><code class="lang-html"><div class="highlight"><pre> <span class="nt">&lt;brick-appbar&gt;</span>
+   <span class="nt">&lt;button&gt;</span>=<span class="nt">&lt;/button&gt;</span>
+   <span class="nt">&lt;h2&gt;</span>Email<span class="nt">&lt;/h2&gt;</span>
+   <span class="nt">&lt;button&gt;</span>+<span class="nt">&lt;/button&gt;</span>
+   <span class="nt">&lt;button&gt;</span>?<span class="nt">&lt;/button&gt;</span>
+ <span class="nt">&lt;/brick-appbar&gt;</span>
+</pre></div>
+
+</code></pre>
 </li>
 </ol>
 <h2 id="options">Options</h2>
@@ -123,10 +133,16 @@
 <p>To get started:</p>
 <ul>
 <li><p>Install <a href="http://bower.io/">Bower</a> &amp; <a href="http://gulpjs.com/">Gulp</a>:</p>
-<pre><code class="lang-sh">  $ npm install -g bower gulp</code></pre>
+<pre><code class="lang-sh"><div class="highlight"><pre>  <span class="nv">$ </span>npm install -g bower gulp
+</pre></div>
+
+</code></pre>
 </li>
 <li><p>Install local dependencies:</p>
-<pre><code class="lang-sh">  $ npm install &amp;&amp; bower install</code></pre>
+<pre><code class="lang-sh"><div class="highlight"><pre>  <span class="nv">$ </span>npm install <span class="o">&amp;&amp;</span> bower install
+</pre></div>
+
+</code></pre>
 </li>
 </ul>
 <p>While developing your component, there is a development server that will watch your files for changes and automatically re-build your styles and re-lint your code.</p>
