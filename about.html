@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/media/css/site.css">
     <link rel="stylesheet" href="/media/css/highlight.css">
   </head>
-  <body >
+  <body unresolved>
     <brick-layout horizontal class="main" id="main">
       <header drawer-lt-s>
         <a class="logo" href="/index.html"><h1>Brick</h1></a>
@@ -82,6 +82,9 @@
       document.registerElement('route-link', {
         prototype: RouteLinkProto,
         extends: 'a'
+      });
+      document.addEventListener('WebComponentsReady', function(){
+        document.body.removeAttribute('unresolved');
       });
     </script>
     <script>
