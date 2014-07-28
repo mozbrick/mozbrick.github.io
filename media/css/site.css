@@ -3,12 +3,6 @@
   -moz-boz-sizing: border-box;
 }
 
-[unresolved] {
-  opacity: 0;
-  display: block;
-  overflow: hidden;
-}
-
 html, body {
   font-family: 'Fira Sans', sans-serif;
   height: 100%;
