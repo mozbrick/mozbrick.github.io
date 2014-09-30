@@ -132,7 +132,7 @@ gulp.task('blog', function () {
 
 gulp.task('connect', function() {
   connect.server({
-    port: 3001
+    port: process.env.PORT || 3001
   });
 });
 
