@@ -58,8 +58,12 @@ nav a, nav a:link {
   display: block;
   background: transparent;
 }
+nav a:hover {
+  background: #E1E8EE;
+}
 nav a.active {
   background: #D4DDE4;
+  font-weight: 600;
 }
 nav ul ul a {
   padding-left: 3rem;
