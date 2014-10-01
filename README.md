@@ -20,4 +20,5 @@ GitHub username):
     git clone git@github.com:$YOUR_USERNAME/mozbrick.github.io.git
 
 Finally, run `npm install` from inside the repo, then run `gulp` to spin up
-a local copy of the site. Open `http://localhost:3001/` to see the site.
+a local copy of the site. Open `http://localhost:3001/` to see the site. To
+run the server on a different port, just set the `PORT` environment variable.
