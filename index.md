@@ -13,11 +13,11 @@ bower install mozbrick/brick
 To use Brick in your project, place the following in the `<head>` of your main HTML:
 
 ```html
-<script src="bower_components/brick/dist/platform/platform.js"></script>
+<script src="bower_components/brick/dist/webcomponentsjs/webcomponents.js"></script>
 <link rel="import" href="bower_components/brick/dist/brick.html">
 ```
 
-If you are already using Polymer, platform.js or a web browser that supports Web Components, you do not need the above `<script>` tag.
+If you are already using Polymer, webcomponents.js or a web browser that supports Web Components, you do not need the above `<script>` tag.
 
 ## Development
 

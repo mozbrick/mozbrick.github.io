@@ -15,7 +15,7 @@
     "tests"
   ],
   "dependencies": {
-    "platform": "Polymer/platform#~0.3.3",
+    "webcomponentsjs": "Polymer/webcomponentsjs#~0.5.1",
     "brick": "mozbrick/brick#master"
   }
 }

@@ -20,7 +20,7 @@
   ],
   "dependencies": {
     "brick-common": "*",
-    "platform": "Polymer/platform"
+    "webcomponentsjs": "Pwebcomponentsjslatform"
   },
   "_release": "b3bbf6b8e4",
   "_resolution": {

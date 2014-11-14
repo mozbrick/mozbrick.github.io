@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
     <title>Brick</title>
-    <script src="/bower_components/platform/platform.js"></script>
+    <script src="/bower_components/webcomponentsjs/webcomponents.js"></script>
     <link rel="import" href="/bower_components/brick/dist/brick.html">
     <link rel="stylesheet" href="//code.cdn.mozilla.net/fonts/fira.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -65,7 +65,7 @@
 <section><h1 id="brick-2-0">Brick 2.0</h1>
 <h2 id="tl-dr">TL;DR</h2>
 <ul>
-<li><a href="#what-is-brick-">Brick is a constistent and curated collection of components (UI and functional) used to ease the webapp development process.</a></li>
+<li><a href="#what-is-brick-">Brick is a consistent and curated collection of components (UI and functional) used to ease the webapp development process.</a></li>
 <li><a href="#what-is-brick-not-">Brick is <strong>not</strong> a framework</a>.</li>
 <li><a href="#custom-elements">Brick is a participant in the open Custom Elements ecosystem.</a></li>
 <li><a href="#on-x-tag">Brick will no longer rely on the x-tag library.</a></li>
@@ -86,14 +86,14 @@
 <p>These new APIs have gotten developers excited about the Web in a whole new way, and people have begun building and sharing their own Custom Elements. Brick, Polymer, and many other third-party Custom Elements are being distributed and indexed as part of an awesome burgeoning <a href="//customelements.io">Custom Elements</a> ecosystem.</p>
 <p>People have asked how their component can become part of Brick. We love contributions, but not every component may match the coding and API style of Brick, or meet its goals. Just as many programming languages have a standard library as well as a rich ecosystem of third-party modules, Brick aims to be a &#39;standard library&#39; of webapp-specific Custom Elements, but will support and interoperate with the larger community of components.</p>
 <h2 id="on-x-tag">On X-Tag</h2>
-<p>In the early(er) days of Web Components, the Custom Elements standard was very much so in flux. It was hard to build to the standard or even a polyfill because the APIs kept changing. <a href="https://github.com/csuwildcat/">Daniel Buchner</a> and <a href="https://github.com/pennyfx/">Arron Schaar</a> concieved of <a href="http://x-tags.org/">x-tag</a>, which provided useful helper functions around events and the component definition process. The library was a godsend, and using it Brick was able to get off the ground. Over time, however, the APIs have settled, and the project found itself in need of the other features of the Web Components standards. These features are all part of the <a href="https://github.com/Polymer/platform/">platform.js</a> polyfill that is part of Polymer and available externally as well. Additionally, the rising popularity of Google&#39;s Polymer and its syntax for describing Custom Elements grew, and when users came to contribute to Brick and x-tag, they found themselves facing an unfamiliar syntax and an underlying library that was frequently not well documented. The decision was made that if users encounter Custom Element registration syntax, it should be the standards-based syntax. Brick components are now written in a &#39;vanilla&#39; style, using the standards-based APIs directly.</p>
+<p>In the early(er) days of Web Components, the Custom Elements standard was very much so in flux. It was hard to build to the standard or even a polyfill because the APIs kept changing. <a href="https://github.com/csuwildcat/">Daniel Buchner</a> and <a href="https://github.com/pennyfx/">Arron Schaar</a> concieved of <a href="http://x-tags.org/">x-tag</a>, which provided useful helper functions around events and the component definition process. The library was a godsend, and using it Brick was able to get off the ground. Over time, however, the APIs have settled, and the project found itself in need of the other features of the Web Components standards. These features are all part of the <a href="https://github.com/Polymer/webcomponentsjs/">webcomponents.js</a> polyfill that is part of Polymer and available externally as well. Additionally, the rising popularity of Google&#39;s Polymer and its syntax for describing Custom Elements grew, and when users came to contribute to Brick and x-tag, they found themselves facing an unfamiliar syntax and an underlying library that was frequently not well documented. The decision was made that if users encounter Custom Element registration syntax, it should be the standards-based syntax. Brick components are now written in a &#39;vanilla&#39; style, using the standards-based APIs directly.</p>
 <p>Here&#39;s a diagram of how things looked with Brick 1.0:</p>
 <div class="diagram">
   <div class="layer">
     <div class="label platform">Platform (standards)</div>
     <div class="children">
       <div class="layer">
-        <div class="label poly">Polyfill (platform.js)</div>
+        <div class="label poly">Polyfill (webcomponents.js)</div>
         <div class="children">
           <div class="layer">
             <div class="label library">Polymer</div>
@@ -118,13 +118,13 @@
   </div>
 </div>
 
-<p>Going forward, Brick will ship using the same <a href="https://github.com/Polymer/platform/">platform.js polyfill</a> used by Polymer. This gives us access to the full range of Web Components features, as well as ensures interoperability with Polymer and other standards-based Custom Elements:</p>
+<p>Going forward, Brick will ship using the same <a href="https://github.com/Polymer/webcomponentsjs/">webcomponents.js polyfill</a> used by Polymer. This gives us access to the full range of Web Components features, as well as ensures interoperability with Polymer and other standards-based Custom Elements:</p>
 <div class="diagram">
   <div class="layer">
     <div class="label platform">Platform (standards)</div>
     <div class="children">
       <div class="layer">
-        <div class="label poly">Polyfill (platform.js)</div>
+        <div class="label poly">Polyfill (webcomponents.js)</div>
         <div class="children">
           <div class="layer">
             <div class="label library">Polymer</div>
@@ -145,7 +145,7 @@
 </div>
 
 <h2 id="so-what-s-next-">So What&#39;s Next?</h2>
-<p>After deciding to use the platform.js polyfills and remove the x-tag library, Brick is being built from the ground-up to be lighter, more modular, and easier to contribute to. It&#39;s a big undertaking, so we&#39;re moving from 1.0 to 2.0 to reflect the scale of the work. It&#39;s a more-or-less reboot of the entire project, and I as well as the rest of the team are very excited about it. We haven&#39;t been vocal enough about updates, but I&#39;m committing to posting regularly here as well as on Twitter at <a href="https://twitter.com/mozbrick/">@mozbrick</a>. Stay tuned!</p>
+<p>After deciding to use the webcomponents.js polyfills and remove the x-tag library, Brick is being built from the ground-up to be lighter, more modular, and easier to contribute to. It&#39;s a big undertaking, so we&#39;re moving from 1.0 to 2.0 to reflect the scale of the work. It&#39;s a more-or-less reboot of the entire project, and I as well as the rest of the team are very excited about it. We haven&#39;t been vocal enough about updates, but I&#39;m committing to posting regularly here as well as on Twitter at <a href="https://twitter.com/mozbrick/">@mozbrick</a>. Stay tuned!</p>
 <p>~potch</p>
 <p><small>written 15 July 2014 &middot; <a href="/blog/2014-07-11-Brick-2-point-0.html">permalink</a></small></p>
 </section>

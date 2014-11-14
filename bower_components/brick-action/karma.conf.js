@@ -3,7 +3,7 @@ module.exports = function(config){
     basePath: '.',
 
     files : [
-      'bower_components/platform/platform.js',
+      'bower_components/webcomponentsjs/webcomponents.js',
       'test/browser.js',
       {pattern: 'src/*', watched: true, included: false, served: true}
     ],

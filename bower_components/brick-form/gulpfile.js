@@ -15,7 +15,7 @@ var paths = {
   'src': 'src/*',
   'index': 'index.html',
   'bowerComponents': 'bower_components/**/*',
-  'testfiles': ['test/*', 'bower_components/platform/platform.js']
+  'testfiles': ['test/*', 'bower_components/webcomponentsjs/webcomponents.js']
 };
 
 gulp.task('lint', function() {

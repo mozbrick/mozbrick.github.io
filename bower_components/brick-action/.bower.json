@@ -20,7 +20,7 @@
   ],
   "dependencies": {
     "brick-common": "*",
-    "platform": "Polymer/platform"
+    "webcomponentsjs": "Polymer/webcomponentsjs"
   },
   "devDependencies": {
     "brick-flipbox": "mozbrick/brick-flipbox"
