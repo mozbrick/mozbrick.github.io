@@ -20,7 +20,7 @@
   ],
   "dependencies": {
     "brick-common": "*",
-    "platform": "Polymer/platform"
+    "webcomponentsjs": "Pwebcomponentsjslatform"
   },
   "devDependencies": {
     "brick-deck": "mozbrick/brick-deck"

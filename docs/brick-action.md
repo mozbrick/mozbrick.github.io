@@ -12,7 +12,7 @@ It listens to an event on a source elemenet and then calls a method on a target 
 1. Import Web Components polyfill:
 
     ```html
-    <script src="bower_components/platform/platform.js"></script>
+    <script src="bower_components/webcomponentsjs/webcomponents.js"></script>
     ```
 
 2. Import Custom Element:

@@ -21,7 +21,7 @@
   ],
   "dependencies": {
     "brick-common": "*",
-    "platform": "Polymer/platform"
+    "webcomponentsjs": "Pwebcomponentsjslatform"
   },
   "devDependencies": {
     "brick-storage-indexeddb": "mozbrick/brick-storage-indexeddb"

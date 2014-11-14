@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
     <title>Brick</title>
-    <script src="/bower_components/platform/platform.js"></script>
+    <script src="/bower_components/webcomponentsjs/webcomponents.js"></script>
     <link rel="import" href="/bower_components/brick/dist/brick.html">
     <link rel="stylesheet" href="//code.cdn.mozilla.net/fonts/fira.css">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -71,7 +71,7 @@
 <h2 id="usage">Usage</h2>
 <ol>
 <li><p>Import Web Components polyfill:</p>
-<pre><code class="lang-html"><div class="highlight"><pre> <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;bower_components/platform/platform.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
+<pre><code class="lang-html"><div class="highlight"><pre> <span class="nt">&lt;script </span><span class="na">src=</span><span class="s">&quot;bower_components/webcomponentsjs/webcomponents.js&quot;</span><span class="nt">&gt;&lt;/script&gt;</span>
 </pre></div>
 
 </code></pre>
@@ -321,7 +321,7 @@ To make the header take up as much space as it needs and the rest below we put t
 <pre><code class="lang-css"><div class="highlight"><pre><span class="nt">html</span><span class="o">,</span> <span class="nt">body</span> <span class="p">{</span>
   <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
   <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-  <span class="k">height</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
 
@@ -355,7 +355,7 @@ To make the header take up as much space as it needs and the rest below we put t
 <pre><code class="lang-css"><div class="highlight"><pre><span class="nt">html</span><span class="o">,</span> <span class="nt">body</span> <span class="p">{</span>
   <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
   <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-  <span class="k">height</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nc">.column</span> <span class="p">{</span>
   <span class="k">border-left</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#ccc</span><span class="p">;</span>
@@ -405,7 +405,7 @@ To make the header take up as much space as it needs and the rest below we put t
 <pre><code class="lang-css"><div class="highlight"><pre><span class="nt">html</span><span class="o">,</span> <span class="nt">body</span> <span class="p">{</span>
   <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
   <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-  <span class="k">height</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nf">#header</span> <span class="p">{</span>
   <span class="k">border-bottom</span><span class="o">:</span> <span class="m">1px</span> <span class="k">solid</span> <span class="m">#ccc</span><span class="p">;</span>
@@ -469,7 +469,7 @@ To make the header take up as much space as it needs and the rest below we put t
 <pre><code class="lang-css"><div class="highlight"><pre><span class="nt">html</span><span class="o">,</span> <span class="nt">body</span> <span class="p">{</span>
   <span class="k">padding</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
   <span class="k">margin</span><span class="o">:</span> <span class="m">0</span><span class="p">;</span>
-  <span class="k">height</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+  <span class="k">height</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
   <span class="n">box</span><span class="o">-</span><span class="n">sizing</span><span class="o">:</span> <span class="k">border</span><span class="o">-</span><span class="n">box</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nf">#header</span> <span class="p">{</span>
@@ -482,7 +482,7 @@ To make the header take up as much space as it needs and the rest below we put t
 <span class="p">}</span>
 <span class="nf">#menu</span> <span class="o">&gt;</span> <span class="o">*</span> <span class="p">{</span>
   <span class="k">padding</span><span class="o">:</span> <span class="m">9px</span><span class="p">;</span>
-  <span class="k">width</span><span class="o">:</span> <span class="m">100</span><span class="o">%</span><span class="p">;</span>
+  <span class="k">width</span><span class="o">:</span> <span class="m">100%</span><span class="p">;</span>
 <span class="p">}</span>
 <span class="nf">#menu</span> <span class="o">[</span><span class="nt">selected</span><span class="o">]</span> <span class="p">{</span>
   <span class="k">font-weight</span><span class="o">:</span> <span class="k">bold</span><span class="p">;</span>
