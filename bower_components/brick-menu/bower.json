@@ -21,6 +21,6 @@
   ],
   "dependencies": {
     "brick-common": "*",
-    "webcomponentsjs": "Pwebcomponentsjslatform"
+    "webcomponentsjs": "Polymer/webcomponentsjs"
   }
 }
